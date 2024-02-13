@@ -1,10 +1,13 @@
 "use client";
 import Image from "next/image";
 import image from "../../styles/images/logo.png";
-
 import Link from "next/link";
+import { useForgetPassword } from "@/@api/auth";
 
 export default function forgetPassword() {
+
+  const useforgetpassword = useForgetPassword()
+  const {handleInputChange,handleSubmit} = useforgetpassword;
   return (
     <div>
       <div className="grid w-full grow grid-cols-1 place-items-center">
@@ -30,7 +33,7 @@ export default function forgetPassword() {
                   type="text"
                   name="email"
                   // value={statelogin.email}
-                  // onChange={handleChange}
+                  onChange={handleInputChange}
                 />
                 <span className="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                   <svg
@@ -52,7 +55,7 @@ export default function forgetPassword() {
             </label>
 
             <button
-              // onClick={handleSubmit}
+              onClick={handleSubmit}
               className="btn mt-5 w-full bg-primary font-medium text-white bg-violet-600 hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90 rounded-lg p-2"
             >
               Send Email
