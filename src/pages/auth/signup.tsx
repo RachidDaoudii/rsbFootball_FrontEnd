@@ -16,7 +16,7 @@ export default function register() {
             <Image className="mx-auto h-20 w-20" src={image} alt="logo" />
             <div className="mt-4">
               <h2 className="text-2xl font-semibold text-slate-600 dark:text-navy-100">
-                Welcome To E-commerce
+              Welcome Back
               </h2>
               <p className="text-slate-400 dark:text-navy-300">
                 Please sign up to continue
@@ -35,17 +35,16 @@ export default function register() {
               />
               <span className="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                 <svg
+                  className="text-slate-400 h-5 w-5 transition-colors duration-200"
+                  aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 transition-colors duration-200"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    d="M7 17v1c0 .6.4 1 1 1h8c.6 0 1-.4 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                   />
                 </svg>
               </span>
@@ -56,22 +55,20 @@ export default function register() {
                 placeholder="Last Name"
                 type="text"
                 name="lastName"
-                // value={stateregister.username}
                 onChange={handleInputChange}
               />
               <span className="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                 <svg
+                  className="text-slate-400 h-5 w-5 transition-colors duration-200"
+                  aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 transition-colors duration-200"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    d="M7 17v1c0 .6.4 1 1 1h8c.6 0 1-.4 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                   />
                 </svg>
               </span>
@@ -82,7 +79,6 @@ export default function register() {
                 placeholder="Email"
                 type="email"
                 name="email"
-                // value={stateregister.email}
                 onChange={handleInputChange}
               />
               <span className="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
@@ -108,7 +104,6 @@ export default function register() {
                 placeholder="Password"
                 type="password"
                 name="password"
-                // value={stateregister.password}
                 onChange={handleInputChange}
               />
               <span className="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
@@ -134,7 +129,6 @@ export default function register() {
                 placeholder="Repeat Password"
                 type="password"
                 name="passwordConfirm"
-                // value={stateregister.passwordConfirm}
                 onChange={handleInputChange}
               />
               <span className="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">

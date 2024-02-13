@@ -2,7 +2,7 @@
 import { useRegisterMutation } from "@/redux/service/auth/authApi";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export const useSignUp = () => {
   const router = useRouter();
@@ -31,7 +31,11 @@ export const useSignUp = () => {
   useEffect(() => {
     if (isSuccess) {
       router.push("/auth/signin");
-      toast.success("Votre compte a été créé avec succès");
+      toast.success("Check your email");
+    }
+    if(isError){
+      toast.error(error);
+
     }
   }, [error, isSuccess, isError]);
 
