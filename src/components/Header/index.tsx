@@ -2,6 +2,8 @@ import Image from "next/image";
 import img from "@/styles/images/footer/logo.png";
 import Link from "next/link";
 
+import "@/components/PrelineScript";
+
 const header = () => {
   return (
     <div>
@@ -36,9 +38,9 @@ const header = () => {
             >
               <path
                 className="mega"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
           </button>
@@ -74,6 +76,8 @@ const header = () => {
                   Club
                 </a>
               </li>
+              
+              
               <li>
                 <a
                   href="{{route('page.products')}}"
@@ -98,6 +102,7 @@ const header = () => {
                   Contact
                 </a>
               </li>
+
               <li>
                 <a
                   className="md:hover:text-blue-700 text-white"
@@ -113,9 +118,9 @@ const header = () => {
                     stroke="currentColor"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                     />
                   </svg>
@@ -132,7 +137,7 @@ const header = () => {
                   </div>
                   <div className="py-2">
                     {/* <!-- Authentication --> */}
-                    <form method="POST" action="{{ route('logout') }}" x-data>
+                    <form method="POST" action="{{ route('logout') }}">
                       {/* @csrf */}
                       <button
                         type="submit"
@@ -142,9 +147,9 @@ const header = () => {
                           className="w-4 h-4 mr-3"
                           aria-hidden="true"
                           fill="none"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
                         >
@@ -177,9 +182,9 @@ const header = () => {
                     stroke="currentColor"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                     />
                   </svg>
@@ -288,9 +293,9 @@ const header = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </button>

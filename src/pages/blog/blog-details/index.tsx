@@ -1,6 +1,6 @@
 import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
-import Header from "@/components/Header";
+import Header from "@/components/Header/2";
 import Footer from "@/components/footer";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -17,7 +17,7 @@ const SingleBlogPage = () => {
       <div>
         <Header />
       </div>
-      <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
+      <section className="py-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">
             <div className="md:w-1/2 lg:w-[32%]">
