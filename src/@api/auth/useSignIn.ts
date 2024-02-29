@@ -1,19 +1,19 @@
 "use client";
-import { useLoginMutation } from "@/redux/service/auth/authApi";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
+import { LoginApi } from "@/pages/api/auth/query/query.auth";
 
 export const useSignIn = () => {
-  const router = useRouter();
+
+  const loginMutation = LoginApi();
 
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
 
-  const [login, { isLoading, error, isSuccess, isError, data }] =
-    useLoginMutation();
+
 
   const handleInputChange = (event: any) => {
     const { name, value } = event.target;
@@ -22,20 +22,10 @@ export const useSignIn = () => {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    await login(user);
+    await loginMutation.mutate(user);
   };
 
-  useEffect(() => {
-    if (isSuccess) {
-      toast.success(data?.message);
-      if (data.data) {
-        router.push("/dashboard");
-      }
-      if(isError){
-        toast.error(error);
-      }
-    }
-  }, [error, isSuccess, isError]);
+
 
   return { handleSubmit, handleInputChange };
 };

@@ -1,11 +1,11 @@
 "use client";
-import { useRegisterMutation } from "@/redux/service/auth/authApi";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
+import { RegisterApi } from "@/pages/api/auth/query/query.auth";
 
 export const useSignUp = () => {
-  const router = useRouter();
+  const registerMutation = RegisterApi();
 
   const [user, setUser] = useState({
     firstName: "",
@@ -16,8 +16,7 @@ export const useSignUp = () => {
     urlClub: "clun12",
   });
 
-  const [register, { isLoading, error, isSuccess, isError }] =
-    useRegisterMutation();
+ 
   const handleInputChange = (event: any) => {
     const { name, value } = event.target;
     setUser({ ...user, [name]: value });
@@ -25,19 +24,10 @@ export const useSignUp = () => {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    await register(user);
+    await registerMutation.mutate(user);
   };
 
-  useEffect(() => {
-    if (isSuccess) {
-      router.push("/auth/signin");
-      toast.success("Check your email");
-    }
-    if(isError){
-      toast.error(error);
-
-    }
-  }, [error, isSuccess, isError]);
+  
 
   return { handleSubmit, handleInputChange };
 };
