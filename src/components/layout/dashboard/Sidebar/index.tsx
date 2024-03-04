@@ -10,7 +10,7 @@ const Sidebar = () => {
     setIsActive(!isActive);
   };
 
-  console.log(router.pathname)
+  // console.log(router.pathname)
   return (
     <div>
       <div className="sticky top-0 inset-x-0 z-20 bg-gray-800 border-y px-4 sm:px-6 md:px-8 lg:hidden dark:bg-gray-800 dark:border-gray-700">

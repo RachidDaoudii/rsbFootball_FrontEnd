@@ -555,11 +555,11 @@
   }
   .section_header .m_player_info_wrapper_new #name_player {
     width: 40%;
-    top: 120px;
+    top: 140px;
     font-size: 50px;
   }
   #number_player {
-    left: 170px;
+    left: 200px;
     font-size: 100px;
   }
 }
@@ -605,10 +605,25 @@
 @media (max-width: 499px) {
   .section_header #m_player_info_wrapper_new #number_player {
     font-size: 4rem;
-    top: 0.1rem;
   }
   .section_header #m_player_info_wrapper_new .place {
     left: 450px;
+    top:30px;
+    font-size: 1rem;
+  }
+  .section_header #m_player_info_wrapper_new .name_player {
+    left: 400px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 744px) and (min-width: 499px) {
+  .section_header #m_player_info_wrapper_new #number_player {
+    font-size: 4rem;
+
+  }
+  .section_header #m_player_info_wrapper_new .place {
+    top:45px;
     font-size: 1rem;
   }
   .section_header #m_player_info_wrapper_new .name_player {
@@ -923,7 +938,7 @@
   color: rgba(255, 255, 255, 0.762);
   z-index: 0;
   padding-left: 40px;
-  top: 120px;
+  top: 160px;
 }
 .section_header .m_player_info_wrapper_new .number {
   position: absolute;
@@ -932,13 +947,14 @@
   font-size: 150px;
   font-family: Arial, sans-serif;
   color: rgba(255, 255, 255, 0.762);
-  top: 250px;
+  top: 210px;
 }
 .section_header .photo_player {
   width: 50%;
 }
 .section_header .photo_player img {
   width: 300px;
+ 
 }
 
 .m_player_info_new {
@@ -1390,3 +1406,11 @@
   }
 }
 /*# sourceMappingURL=main.css.map */
+
+
+.bg-stage {
+  background-image: url('../images/stade/stade.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}

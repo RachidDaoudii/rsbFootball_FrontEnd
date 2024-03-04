@@ -1,19 +1,17 @@
 import Image from "next/image";
 import img from "@/styles/images/player/kevin-de-bruyne.webp";
 import logo from "@/styles/images/footer/logo.png";
-
+import Header from "@/components/Header/2";
+import Footer from "@/components/footer";
 const Player = () => {
   return (
+    <>
+     <Header />
     <div className="grid_not_cabecera">
       <div className="master-layout neoplayer_layout">
         <div
-          className="m_full_header_banner main_banner_row overflow with_video"
-          style={{
-            backgroundImage: `url('images/stade/stade.jpg')`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            width: "100%",
-          }}
+          className="m_full_header_banner main_banner_row overflow with_video bg-stage"
+
         >
           <div className="m_player_bio_new ">
             <div className="section section_header flex">
@@ -39,7 +37,7 @@ const Player = () => {
           </div>
         </div>
         <div className="section m_player_info_new max-w-screen" id="playerinfo">
-          <div className="flex">
+          <div className="flex flex-wrap">
             <div className="w-1/2  p-8">
               <div className="biography">
                 <h2 className="title">
@@ -88,15 +86,6 @@ const Player = () => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-center">
-              <div className="w-40 h-10">
-                <Image
-                  src={logo}
-                  // style="width: 200px;"
-                  alt="logo"
-                />
-              </div>
-            </div>
             <div className="w-1/2 p-8">
               <div className="personal_data">
                 <h2 className="title">
@@ -138,6 +127,10 @@ const Player = () => {
         </div>
       </div>
     </div>
+    <div>
+      <Footer/>
+    </div>
+    </>
   );
 };
 

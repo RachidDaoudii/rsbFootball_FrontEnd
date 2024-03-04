@@ -2,9 +2,9 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import img from "@/styles/images/footer/logo.png";
 import Header2 from "@/components/Header/2";
-import { motion } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (

@@ -1,722 +1,1254 @@
-// import BlogData from "@/components/Blog/blogData";
-// import BlogItem from "@/components/Blog/BlogItem";
-// import { Metadata } from "next";
-// import Header from "@/components/Header/2";
-// export const metadata: Metadata = {
-//   title: "Blog Page - Solid SaaS Boilerplate",
-//   description: "This is Blog page for Solid Pro",
-//   // other metadata
-// };
+import BlogData from "@/components/Blog/blogData";
+import BlogItem from "@/components/Blog/BlogItem";
+import { Metadata } from "next";
+import Header from "@/components/Header/2";
+import Footer from "@/components/footer";
+export const metadata: Metadata = {
+  title: "Blog Page - Solid SaaS Boilerplate",
+  description: "This is Blog page for Solid Pro",
+  // other metadata
+};
 
-// const BlogPage = () => {
-
-//   return (
-//     <>
-//       {/* <!-- ===== Blog Grid Start ===== --> */}
-//       <Header />
-//       <section className="pb-20 lg:py-25 xl:py-30">
-//         <div className="mx-auto mt-15 max-w-c-1280 px-4 md:px-8 xl:mt-20 xl:px-0">
-//           <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-10">
-//             {BlogData.map((post, key) => (
-//               <BlogItem key={key} blog={post} />
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-//       {/* <!-- ===== Blog Grid End ===== --> */}
-//     </>
-//   );
-// };
-
-// export default BlogPage;
 
 import type { NextPage } from "next";
 
 const LigthMode: NextPage = () => {
   return (
-    <div className="relative bg-white w-full overflow-hidden flex flex-col items-start justify-start text-left text-xl text-gray1-100 font-text-sm-medium">
-      <div className="self-stretch bg-white flex flex-col items-center justify-center py-[30px] px-0 gap-[50px_0px]"></div>
-      <div className="w-[1440px] bg-white hidden flex-col items-center justify-start py-24 px-0 box-border text-center text-base text-primary-600">
-        <div className="w-[1280px] flex flex-col items-center justify-start py-0 px-8 box-border">
-          <div className="self-stretch flex flex-col items-center justify-start gap-[40px_0px]">
-            <div className="w-[960px] flex flex-col items-center justify-start gap-[24px_0px]">
-              <div className="self-stretch flex flex-col items-start justify-start gap-[12px_0px]">
-                <div className="self-stretch relative leading-[24px] font-semibold">
-                  Our blog
-                </div>
-                <div className="self-stretch relative text-29xl tracking-[-0.02em] leading-[60px] font-semibold text-gray-900">
-                  Stories and interviews
-                </div>
-              </div>
-              <div className="w-[768px] relative text-xl leading-[30px] text-gray-500 inline-block">
-                Subscribe to learn about new product features, the latest in
-                technology, solutions, and updates.
-              </div>
+    <>
+     <Header />
+    <div className="container px-8 mx-auto xl:px-5  max-w-screen-lg py-5 lg:py-8">
+    <div className="grid gap-10 md:grid-cols-2 lg:gap-10 ">
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-video"
+            href="/post/architectural-engineering-wonders-of-the-modern-era-for-your-inspiration"
+          >
+            <img
+              alt="Thumbnail"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="https://stablo-template.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F05951a0ec1a6ffc54f615ab160649e92fea982d0-800x764.png%3Frect%3D0%2C0%2C800%2C468%26w%3D800%26auto%3Dformat&w=640&q=75"
+              src="https://stablo-template.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F05951a0ec1a6ffc54f615ab160649e92fea982d0-800x764.png%3Frect%3D0%2C0%2C800%2C468%26w%3D800%26auto%3Dformat&w=640&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/technology">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-blue-600">
+                  Technology
+                </span>
+              </a>
             </div>
-            <div className="flex flex-row items-start justify-start gap-[0px_16px] text-left text-sm text-gray-700">
-              <div className="self-stretch w-[360px] flex flex-col items-start justify-start">
-                <div className="self-stretch flex flex-col items-start justify-start gap-[8px_0px]">
-                  <div className="self-stretch flex flex-col items-start justify-start gap-[6px_0px]">
-                    <div className="w-9 relative leading-[20px] font-medium hidden">
-                      Email
-                    </div>
-                    <div className="self-stretch rounded-lg bg-white shadow-[0px_1px_2px_rgba(16,_24,_40,_0.05)] overflow-hidden flex flex-row items-center justify-start py-3 pr-3.5 pl-4 gap-[0px_8px] text-base text-gray-500 border-[1px] border-solid border-gray-300">
-                      <div className="flex-1 flex flex-row items-center justify-start gap-[0px_8px]">
-                        <img
-                          className="w-5 relative h-5 overflow-hidden shrink-0 hidden"
-                          alt=""
-                          src="https://www.imf.org/-/media/Images/IMF/News/Blogs/2022/blog041922-gfsr-chp1.ashx?h=312&w=570&la=fr"
-                        />
-                        <div className="flex-1 relative leading-[24px]">
-                          Enter your email
-                        </div>
-                      </div>
-                      <img
-                        className="w-4 relative h-4 hidden"
-                        alt=""
-                        src="https://www.imf.org/-/media/Images/IMF/News/Blogs/2022/blog041922-gfsr-chp1.ashx?h=312&w=570&la=fr"
-                      />
-                    </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/architectural-engineering-wonders-of-the-modern-era-for-your-inspiration">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  Architectural Engineering Wonders of the modern era for your
+                  Inspiration
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/architectural-engineering-wonders-of-the-modern-era-for-your-inspiration">
+                  Reinvention often comes in spurts, after a long period of
+                  silence. Just as modern architecture recently enjoyed a
+                  comeback, brand architecture, a field with well-established
+                  principles for decades
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/mario-sanchez">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Mario Sanchez"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="https://stablo-template.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F05951a0ec1a6ffc54f615ab160649e92fea982d0-800x764.png%3Frect%3D0%2C0%2C800%2C468%26w%3D800%26auto%3Dformat&w=640&q=75"
+                      src="https://stablo-template.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F05951a0ec1a6ffc54f615ab160649e92fea982d0-800x764.png%3Frect%3D0%2C0%2C800%2C468%26w%3D800%26auto%3Dformat&w=640&q=75"
+                    />
                   </div>
-                  <div className="self-stretch relative leading-[20px] text-gray-500">
-                    {`We care about your data in our `}
-                    <span className="[text-decoration:underline]">
-                      privacy policy
-                    </span>
-                  </div>
+                  <span className="truncate text-sm">Mario Sanchez</span>
                 </div>
-              </div>
-              <div className="rounded-lg flex flex-row items-start justify-start text-base text-white">
-                <div className="rounded-lg bg-primary-600 shadow-[0px_1px_2px_rgba(16,_24,_40,_0.05)] overflow-hidden flex flex-row items-center justify-center py-3 px-5 border-[1px] border-solid border-primary-600">
-                  <div className="relative leading-[24px] font-medium">
-                    Subscribe
-                  </div>
-                </div>
-              </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">October 21, 2022</time>
             </div>
           </div>
         </div>
       </div>
-      <div className="w-[1440px] bg-white overflow-hidden flex flex-col items-center justify-start text-5xl">
-        <div className="self-stretch bg-white flex flex-col items-center justify-start py-[30px] px-0">
-          <div className="w-[1280px] flex flex-col items-start justify-start py-0 px-8 box-border gap-[32px_0px]">
-            <div className="self-stretch relative leading-[32px] font-semibold">
-              Recent blog posts
-            </div>
-            <div className="self-stretch flex flex-row items-start justify-start gap-[0px_32px] text-sm text-slateblue">
-              <div className="self-stretch flex-1 flex flex-col items-start justify-start gap-[32px_0px]">
-                <img
-                  className="self-stretch flex-1 relative max-w-full overflow-hidden max-h-full object-cover"
-                  alt=""
-                  src="/image@2x.png"
-                />
-                <div className="self-stretch flex flex-col items-start justify-start gap-[24px_0px]">
-                  <div className="self-stretch flex flex-col items-start justify-start gap-[12px_0px]">
-                    <div className="self-stretch relative leading-[20px] font-semibold">
-                      Olivia Rhye • 1 Jan 2023
-                    </div>
-                    <div className="self-stretch flex flex-row items-start justify-start gap-[0px_16px] text-5xl text-gray1-100">
-                      <div className="flex-1 relative leading-[32px] font-semibold">
-                        UX review presentations
-                      </div>
-                      <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
-                        <img
-                          className="w-6 relative h-6 overflow-hidden shrink-0"
-                          alt=""
-                          src="/arrowupright.svg"
-                        />
-                      </div>
-                    </div>
-                    <div className="self-stretch relative text-base leading-[24px] text-gray-500">
-                      How do you create compelling presentations that wow your
-                      colleagues and impress your managers?
-                    </div>
-                  </div>
-                  <div className="self-stretch flex flex-row items-start justify-start gap-[0px_8px] text-center">
-                    <div className="flex flex-row items-start justify-start mix-blend-multiply">
-                      <div className="rounded-2xl bg-ghostwhite-200 flex flex-row items-center justify-center py-0.5 px-2.5">
-                        <div className="relative leading-[20px] font-medium">
-                          Design
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-row items-start justify-start mix-blend-multiply text-darkblue">
-                      <div className="rounded-2xl bg-aliceblue-200 flex flex-row items-center justify-center py-0.5 px-2.5">
-                        <div className="relative leading-[20px] font-medium">
-                          Research
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-row items-start justify-start mix-blend-multiply text-pink-700">
-                      <div className="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5">
-                        <div className="relative leading-[20px] font-medium">
-                          Presentation
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex-1 flex flex-col items-start justify-center gap-[32px_0px]">
-                <div className="self-stretch flex flex-row items-start justify-start gap-[0px_24px]">
-                  <img
-                    className="w-80 relative h-[200px] overflow-hidden shrink-0 object-cover"
-                    alt=""
-                    src="/image@2x.png"
-                  />
-                  <div className="flex-1 flex flex-col items-start justify-start gap-[24px_0px]">
-                    <div className="self-stretch flex flex-col items-start justify-start gap-[12px_0px]">
-                      <div className="self-stretch relative leading-[20px] font-semibold">
-                        Phoenix Baker • 1 Jan 2023
-                      </div>
-                      <div className="self-stretch flex flex-col items-start justify-start gap-[8px_0px] text-lg text-gray1-100">
-                        <div className="self-stretch relative leading-[28px] font-semibold">
-                          Migrating to Linear 101
-                        </div>
-                        <div className="self-stretch relative text-base leading-[24px] text-gray-500">
-                          Linear helps streamline software projects, sprints,
-                          tasks, and bug tracking. Here’s how to get...
-                        </div>
-                      </div>
-                    </div>
-                    <div className="self-stretch flex flex-row items-start justify-start gap-[0px_8px] text-center text-steelblue">
-                      <div className="flex flex-row items-start justify-start mix-blend-multiply">
-                        <div className="rounded-2xl bg-aliceblue-100 flex flex-row items-center justify-center py-0.5 px-2.5">
-                          <div className="relative leading-[20px] font-medium">
-                            Design
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-row items-start justify-start mix-blend-multiply text-pink-700">
-                        <div className="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5">
-                          <div className="relative leading-[20px] font-medium">
-                            Research
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="self-stretch flex flex-row items-start justify-start gap-[0px_24px]">
-                  <img
-                    className="w-80 relative h-[200px] overflow-hidden shrink-0 object-cover"
-                    alt=""
-                    src="/image@2x.png"
-                  />
-                  <div className="flex-1 flex flex-col items-start justify-start gap-[24px_0px]">
-                    <div className="self-stretch flex flex-col items-start justify-start gap-[12px_0px]">
-                      <div className="self-stretch relative leading-[20px] font-semibold">
-                        Lana Steiner • 1 Jan 2023
-                      </div>
-                      <div className="self-stretch flex flex-col items-start justify-start gap-[8px_0px] text-lg text-gray1-100">
-                        <div className="self-stretch relative leading-[28px] font-semibold">
-                          Building your API Stack
-                        </div>
-                        <div className="self-stretch relative text-base leading-[24px] text-gray-500">
-                          The rise of RESTful APIs has been met by a rise in
-                          tools for creating, testing, and manag...
-                        </div>
-                      </div>
-                    </div>
-                    <div className="self-stretch flex flex-row items-start justify-start gap-[0px_8px] text-center text-seagreen">
-                      <div className="flex flex-row items-start justify-start mix-blend-multiply">
-                        <div className="rounded-2xl bg-honeydew flex flex-row items-center justify-center py-0.5 px-2.5">
-                          <div className="relative leading-[20px] font-medium">
-                            Design
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-row items-start justify-start mix-blend-multiply text-pink-700">
-                        <div className="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5">
-                          <div className="relative leading-[20px] font-medium">
-                            Research
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-video"
+            href="/post/5-effective-brain-recharging-activities-no-one-is-talking-about"
+          >
+            <img
+              alt="Graphics"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="https://stablo-template.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F05951a0ec1a6ffc54f615ab160649e92fea982d0-800x764.png%3Frect%3D0%2C0%2C800%2C468%26w%3D800%26auto%3Dformat&w=640&q=75"
+              src="https://stablo-template.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F05951a0ec1a6ffc54f615ab160649e92fea982d0-800x764.png%3Frect%3D0%2C0%2C800%2C468%26w%3D800%26auto%3Dformat&w=640&q=75"
+            />
+          </a>
         </div>
-        <div className="self-stretch bg-white flex flex-col items-center justify-start py-[30px] px-0 text-sm text-slateblue">
-          <div className="w-[1280px] flex flex-col items-start justify-start py-0 px-8 box-border">
-            <div className="self-stretch flex flex-row items-start justify-start">
-              <div className="self-stretch flex-1 flex flex-row items-start justify-start gap-[0px_32px]">
-                <img
-                  className="flex-1 relative max-w-full overflow-hidden h-[246px] object-cover"
-                  alt=""
-                  src="/image@2x.png"
-                />
-                <div className="flex-1 flex flex-col items-start justify-start gap-[24px_0px]">
-                  <div className="self-stretch flex flex-col items-start justify-start gap-[12px_0px]">
-                    <div className="self-stretch relative leading-[20px] font-semibold">
-                      Olivia Rhye • 1 Jan 2023
-                    </div>
-                    <div className="self-stretch flex flex-row items-start justify-start gap-[0px_16px] text-5xl text-gray1-100">
-                      <div className="flex-1 relative leading-[32px] font-semibold">
-                        Grid system for better Design User Interface
-                      </div>
-                      <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
-                        <img
-                          className="w-6 relative h-6 overflow-hidden shrink-0"
-                          alt=""
-                          src="/arrowupright.svg"
-                        />
-                      </div>
-                    </div>
-                    <div className="self-stretch relative text-base leading-[24px] text-gray-500">
-                      A grid system is a design tool used to arrange content on
-                      a webpage. It is a series of vertical and horizontal lines
-                      that create a matrix of intersecting points, which can be
-                      used to align and organize page elements. Grid systems are
-                      used to create a consistent look and feel across a
-                      website, and can help to make the layout more visually
-                      appealing and easier to navigate.
-                    </div>
-                  </div>
-                  <div className="self-stretch flex flex-row items-start justify-start gap-[0px_8px] text-center">
-                    <div className="flex flex-row items-start justify-start mix-blend-multiply">
-                      <div className="rounded-2xl bg-ghostwhite-200 flex flex-row items-center justify-center py-0.5 px-2.5">
-                        <div className="relative leading-[20px] font-medium">
-                          Design
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-row items-start justify-start mix-blend-multiply text-pink-700">
-                      <div className="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5">
-                        <div className="relative leading-[20px] font-medium">
-                          Interface
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/lifestyle">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-purple-600">
+                  Lifestyle
+                </span>
+              </a>
             </div>
-          </div>
-        </div>
-        <div className="self-stretch bg-white flex flex-col items-center justify-start py-[30px] px-0">
-          <div className="w-[1280px] flex flex-col items-start justify-start py-0 px-8 box-border gap-[30px_0px]">
-            <div className="w-[1216px] flex flex-col items-start justify-start gap-[32px_0px]">
-              <div className="self-stretch relative leading-[32px] font-semibold">
-                All blog posts
-              </div>
-              <div className="self-stretch flex flex-col items-start justify-start gap-[48px_0px] text-sm text-slateblue">
-                <div className="self-stretch flex flex-row items-start justify-center gap-[0px_32px]">
-                  <div className="flex-1 flex flex-col items-start justify-start gap-[32px_0px]">
-                    <img
-                      className="self-stretch relative max-w-full overflow-hidden h-60 shrink-0 object-cover"
-                      alt=""
-                      src="/image@2x.png"
-                    />
-                    <div className="self-stretch flex flex-col items-start justify-start gap-[24px_0px]">
-                      <div className="self-stretch flex flex-col items-start justify-start gap-[12px_0px]">
-                        <div className="self-stretch relative leading-[20px] font-semibold">
-                          Alec Whitten • 1 Jan 2023
-                        </div>
-                        <div className="self-stretch flex flex-row items-start justify-start gap-[0px_16px] text-5xl text-gray1-100">
-                          <div className="flex-1 relative leading-[32px] font-semibold">
-                            Bill Walsh leadership lessons
-                          </div>
-                          <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
-                            <img
-                              className="w-6 relative h-6 overflow-hidden shrink-0"
-                              alt=""
-                              src="/arrowupright.svg"
-                            />
-                          </div>
-                        </div>
-                        <div className="self-stretch relative text-base leading-[24px] text-gray-500">
-                          Like to know the secrets of transforming a 2-14 team
-                          into a 3x Super Bowl winning Dynasty?
-                        </div>
-                      </div>
-                      <div className="self-stretch flex flex-row items-start justify-start gap-[0px_8px] text-center">
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply">
-                          <div className="rounded-2xl bg-ghostwhite-200 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Leadership
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply text-darkslateblue">
-                          <div className="rounded-2xl bg-ghostwhite-100 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Management
-                            </div>
-                          </div>
-                        </div>
-                        <div className="hidden flex-row items-start justify-start mix-blend-multiply text-pink-700">
-                          <div className="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Presentation
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex-1 flex flex-col items-start justify-start gap-[32px_0px]">
-                    <img
-                      className="self-stretch relative max-w-full overflow-hidden h-60 shrink-0 object-cover"
-                      alt=""
-                      src="/image@2x.png"
-                    />
-                    <div className="self-stretch flex flex-col items-start justify-start gap-[24px_0px]">
-                      <div className="self-stretch flex flex-col items-start justify-start gap-[12px_0px]">
-                        <div className="self-stretch relative leading-[20px] font-semibold">
-                          Demi WIlkinson • 1 Jan 2023
-                        </div>
-                        <div className="self-stretch flex flex-row items-start justify-start gap-[0px_16px] text-5xl text-gray1-100">
-                          <div className="flex-1 relative leading-[32px] font-semibold">
-                            PM mental models
-                          </div>
-                          <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
-                            <img
-                              className="w-6 relative h-6 overflow-hidden shrink-0"
-                              alt=""
-                              src="/arrowupright.svg"
-                            />
-                          </div>
-                        </div>
-                        <div className="self-stretch relative text-base leading-[24px] text-gray-500">
-                          Mental models are simple expressions of complex
-                          processes or relationships.
-                        </div>
-                      </div>
-                      <div className="self-stretch flex flex-row items-start justify-start gap-[0px_8px] text-center text-steelblue">
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply">
-                          <div className="rounded-2xl bg-aliceblue-100 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Product
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply text-darkblue">
-                          <div className="rounded-2xl bg-aliceblue-200 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Research
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply text-firebrick">
-                          <div className="rounded-2xl bg-seashell flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Frameworks
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex-1 flex flex-col items-start justify-start gap-[32px_0px]">
-                    <img
-                      className="self-stretch relative max-w-full overflow-hidden h-60 shrink-0 object-cover"
-                      alt=""
-                      src="/image@2x.png"
-                    />
-                    <div className="self-stretch flex flex-col items-start justify-start gap-[24px_0px]">
-                      <div className="self-stretch flex flex-col items-start justify-start gap-[12px_0px]">
-                        <div className="self-stretch relative leading-[20px] font-semibold">
-                          Candice Wu • 1 Jan 2023
-                        </div>
-                        <div className="self-stretch flex flex-row items-start justify-start gap-[0px_16px] text-5xl text-gray1-100">
-                          <div className="flex-1 relative leading-[32px] font-semibold">
-                            What is Wireframing?
-                          </div>
-                          <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
-                            <img
-                              className="w-6 relative h-6 overflow-hidden shrink-0"
-                              alt=""
-                              src="/arrowupright.svg"
-                            />
-                          </div>
-                        </div>
-                        <div className="self-stretch relative text-base leading-[24px] text-gray-500">
-                          Introduction to Wireframing and its Principles. Learn
-                          from the best in the industry.
-                        </div>
-                      </div>
-                      <div className="self-stretch flex flex-row items-start justify-start gap-[0px_8px] text-center">
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply">
-                          <div className="rounded-2xl bg-ghostwhite-200 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Design
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply text-darkblue">
-                          <div className="rounded-2xl bg-aliceblue-200 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Research
-                            </div>
-                          </div>
-                        </div>
-                        <div className="hidden flex-row items-start justify-start mix-blend-multiply text-pink-700">
-                          <div className="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Presentation
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="self-stretch flex flex-row items-start justify-center gap-[0px_32px]">
-                  <div className="flex-1 flex flex-col items-start justify-start gap-[32px_0px]">
-                    <img
-                      className="self-stretch relative max-w-full overflow-hidden h-60 shrink-0 object-cover"
-                      alt=""
-                      src="/image@2x.png"
-                    />
-                    <div className="self-stretch flex flex-col items-start justify-start gap-[24px_0px]">
-                      <div className="self-stretch flex flex-col items-start justify-start gap-[12px_0px]">
-                        <div className="self-stretch relative leading-[20px] font-semibold">
-                          Natali Craig • 1 Jan 2023
-                        </div>
-                        <div className="self-stretch flex flex-row items-start justify-start gap-[0px_16px] text-5xl text-gray1-100">
-                          <div className="flex-1 relative leading-[32px] font-semibold">
-                            How collaboration makes us better designers
-                          </div>
-                          <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
-                            <img
-                              className="w-6 relative h-6 overflow-hidden shrink-0"
-                              alt=""
-                              src="/arrowupright.svg"
-                            />
-                          </div>
-                        </div>
-                        <div className="self-stretch relative text-base leading-[24px] text-gray-500">
-                          Collaboration can make our teams stronger, and our
-                          individual designs better.
-                        </div>
-                      </div>
-                      <div className="self-stretch flex flex-row items-start justify-start gap-[0px_8px] text-center">
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply">
-                          <div className="rounded-2xl bg-ghostwhite-200 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Design
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply text-darkblue">
-                          <div className="rounded-2xl bg-aliceblue-200 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Research
-                            </div>
-                          </div>
-                        </div>
-                        <div className="hidden flex-row items-start justify-start mix-blend-multiply text-pink-700">
-                          <div className="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Presentation
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex-1 flex flex-col items-start justify-start gap-[32px_0px]">
-                    <img
-                      className="self-stretch relative max-w-full overflow-hidden h-60 shrink-0 object-cover"
-                      alt=""
-                      src="/image@2x.png"
-                    />
-                    <div className="self-stretch flex flex-col items-start justify-start gap-[24px_0px]">
-                      <div className="self-stretch flex flex-col items-start justify-start gap-[12px_0px]">
-                        <div className="self-stretch relative leading-[20px] font-semibold">
-                          Drew Cano • 1 Jan 2023
-                        </div>
-                        <div className="self-stretch flex flex-row items-start justify-start gap-[0px_16px] text-5xl text-gray1-100">
-                          <div className="flex-1 relative leading-[32px] font-semibold">
-                            Our top 10 Javascript frameworks to use
-                          </div>
-                          <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
-                            <img
-                              className="w-6 relative h-6 overflow-hidden shrink-0"
-                              alt=""
-                              src="/arrowupright.svg"
-                            />
-                          </div>
-                        </div>
-                        <div className="self-stretch relative text-base leading-[24px] text-gray-500">
-                          JavaScript frameworks make development easy with
-                          extensive features and functionalities.
-                        </div>
-                      </div>
-                      <div className="self-stretch flex flex-row items-start justify-start gap-[0px_8px] text-center text-seagreen">
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply">
-                          <div className="rounded-2xl bg-honeydew flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Software Development
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply text-pink-700">
-                          <div className="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Tools
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply text-crimson">
-                          <div className="rounded-2xl bg-lavenderblush flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              SaaS
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex-1 flex flex-col items-start justify-start gap-[32px_0px]">
-                    <img
-                      className="self-stretch relative max-w-full overflow-hidden h-60 shrink-0 object-cover"
-                      alt=""
-                      src="/image@2x.png"
-                    />
-                    <div className="self-stretch flex flex-col items-start justify-start gap-[24px_0px]">
-                      <div className="self-stretch flex flex-col items-start justify-start gap-[12px_0px]">
-                        <div className="self-stretch relative leading-[20px] font-semibold">
-                          Orlando Diggs • 1 Jan 2023
-                        </div>
-                        <div className="self-stretch flex flex-row items-start justify-start gap-[0px_16px] text-5xl text-gray1-100">
-                          <div className="flex-1 relative leading-[32px] font-semibold">
-                            Podcast: Creating a better CX Community
-                          </div>
-                          <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
-                            <img
-                              className="w-6 relative h-6 overflow-hidden shrink-0"
-                              alt=""
-                              src="/arrowupright.svg"
-                            />
-                          </div>
-                        </div>
-                        <div className="self-stretch relative text-base leading-[24px] text-gray-500">
-                          Starting a community doesn’t need to be complicated,
-                          but how do you get started?
-                        </div>
-                      </div>
-                      <div className="self-stretch flex flex-row items-start justify-start gap-[0px_8px] text-center">
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply">
-                          <div className="rounded-2xl bg-ghostwhite-200 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Podcasts
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex flex-row items-start justify-start mix-blend-multiply text-darkslateblue">
-                          <div className="rounded-2xl bg-ghostwhite-100 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Customer Success
-                            </div>
-                          </div>
-                        </div>
-                        <div className="hidden flex-row items-start justify-start mix-blend-multiply text-pink-700">
-                          <div className="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5">
-                            <div className="relative leading-[20px] font-medium">
-                              Presentation
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/5-effective-brain-recharging-activities-no-one-is-talking-about">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  5 Effective Brain Recharging Activities No One is Talking
+                  About
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/5-effective-brain-recharging-activities-no-one-is-talking-about">
+                  No wonder mental health issues are at an all-time high. As my
+                  friend John called it, we’re already in the third world war —
+                  and the battlegrounds are our heads.
+                </a>
+              </p>
             </div>
-            <div className="self-stretch box-border h-[62px] flex flex-row items-center justify-between pt-5 px-0 pb-0 text-sm text-gray-500 border-t-[1px] border-solid border-whitesmoke">
-              <div className="flex flex-row items-start justify-start">
-                <div className="flex flex-row items-center justify-center gap-[0px_8px]">
-                  <img
-                    className="w-5 relative h-5 overflow-hidden shrink-0"
-                    alt=""
-                    src="/arrowleft.svg"
-                  />
-                  <div className="relative leading-[20px] font-medium">
-                    Previous
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/joshua-wood">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Joshua Wood"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="https://stablo-template.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F05951a0ec1a6ffc54f615ab160649e92fea982d0-800x764.png%3Frect%3D0%2C0%2C800%2C468%26w%3D800%26auto%3Dformat&w=640&q=75"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
                   </div>
+                  <span className="truncate text-sm">Joshua Wood</span>
                 </div>
-              </div>
-              <div className="flex flex-row items-start justify-start gap-[0px_2px] text-center">
-                <div className="w-10 relative rounded-lg bg-ghostwhite-200 h-10 overflow-hidden shrink-0 text-primary-600">
-                  <div className="absolute top-[0px] left-[0px] rounded-lg w-10 h-10 flex flex-row items-center justify-center p-3 box-border">
-                    <div className="relative leading-[20px] font-medium">1</div>
-                  </div>
-                </div>
-                <div className="w-10 relative rounded-lg h-10 overflow-hidden shrink-0">
-                  <div className="absolute top-[0px] left-[0px] rounded-lg w-10 h-10 flex flex-row items-center justify-center p-3 box-border">
-                    <div className="relative leading-[20px] font-medium">2</div>
-                  </div>
-                </div>
-                <div className="w-10 relative rounded-lg h-10 overflow-hidden shrink-0">
-                  <div className="absolute top-[0px] left-[0px] rounded-lg w-10 h-10 flex flex-row items-center justify-center p-3 box-border">
-                    <div className="relative leading-[20px] font-medium">3</div>
-                  </div>
-                </div>
-                <div className="w-10 relative rounded-lg h-10 overflow-hidden shrink-0">
-                  <div className="absolute top-[0px] left-[0px] rounded-lg w-10 h-10 flex flex-row items-center justify-center p-3 box-border">
-                    <div className="relative leading-[20px] font-medium">
-                      ...
-                    </div>
-                  </div>
-                </div>
-                <div className="w-10 relative rounded-lg h-10 overflow-hidden shrink-0">
-                  <div className="absolute top-[0px] left-[0px] rounded-lg w-10 h-10 flex flex-row items-center justify-center p-3 box-border">
-                    <div className="relative leading-[20px] font-medium">8</div>
-                  </div>
-                </div>
-                <div className="w-10 relative rounded-lg h-10 overflow-hidden shrink-0">
-                  <div className="absolute top-[0px] left-[0px] rounded-lg w-10 h-10 flex flex-row items-center justify-center p-3 box-border">
-                    <div className="relative leading-[20px] font-medium">9</div>
-                  </div>
-                </div>
-                <div className="w-10 relative rounded-lg h-10 overflow-hidden shrink-0">
-                  <div className="absolute top-[0px] left-[0px] rounded-lg w-10 h-10 flex flex-row items-center justify-center p-3 box-border">
-                    <div className="relative leading-[20px] font-medium">
-                      10
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-row items-start justify-start">
-                <div className="flex flex-row items-center justify-center gap-[0px_8px]">
-                  <div className="relative leading-[20px] font-medium">
-                    Next
-                  </div>
-                  <img
-                    className="w-5 relative h-5 overflow-hidden shrink-0"
-                    alt=""
-                    src="/arrowright.svg"
-                  />
-                </div>
-              </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">October 21, 2022</time>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="self-stretch bg-white flex flex-col items-center justify-center py-[30px] px-0">
-        <div className="w-[1216px] flex flex-row items-start justify-start gap-[0px_14px]">
-          <div className="relative leading-[24px]">© 2023</div>
-          <div className="flex flex-row items-start justify-start gap-[0px_14px]">
-            <div className="relative leading-[24px]">{`Twitter `}</div>
-            <div className="relative leading-[24px]">LinkedIn</div>
-            <a
-              className="relative leading-[24px] text-[inherit] [text-decoration:none]"
-              href="mailto:faqihsopyan@gmail.com"
-              target="_blank"
-            >
-              Email
-            </a>
-            <div className="relative leading-[24px]">RSS feed</div>
-            <div className="relative leading-[24px]">Add to Feedly</div>
           </div>
         </div>
       </div>
     </div>
+    <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3 ">
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-square"
+            href="/post/14-architectural-design-ideas-for-spacious-interior"
+          >
+            <img
+              alt="Thumbnail"
+              loading="lazy"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="https://stablo-template.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F05951a0ec1a6ffc54f615ab160649e92fea982d0-800x764.png%3Frect%3D0%2C0%2C800%2C468%26w%3D800%26auto%3Dformat&w=640&q=75"
+              src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F12301f301772ed723724302aef7c70c5c1c0151f-4500x8000.jpg%3Frect%3D0%2C1080%2C4500%2C5330%26w%3D2000%26auto%3Dformat&w=3840&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/design">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-blue-600">
+                  Design
+                </span>
+              </a>
+              <a href="/category/lifestyle">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-purple-600">
+                  Lifestyle
+                </span>
+              </a>
+            </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/14-architectural-design-ideas-for-spacious-interior">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  14 Architectural Design Ideas for a Spacious Interior
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/14-architectural-design-ideas-for-spacious-interior">
+                  It is a cliche philosophical question, but it touches on
+                  something fundamental about how humans relate to the world
+                  around them.{" "}
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/mario-sanchez">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Mario Sanchez"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="https://stablo-template.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F05951a0ec1a6ffc54f615ab160649e92fea982d0-800x764.png%3Frect%3D0%2C0%2C800%2C468%26w%3D800%26auto%3Dformat&w=640&q=75"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
+                  </div>
+                  <span className="truncate text-sm">Mario Sanchez</span>
+                </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">October 21, 2022</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-square"
+            href="/post/every-next-level-of-your-life-will-demand-a-different-you"
+          >
+            <img
+              alt="Thumbnail"
+              loading="lazy"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F2786bf808843b56a0e0feda1c1747cf73673d989-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F2786bf808843b56a0e0feda1c1747cf73673d989-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F2786bf808843b56a0e0feda1c1747cf73673d989-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F2786bf808843b56a0e0feda1c1747cf73673d989-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F2786bf808843b56a0e0feda1c1747cf73673d989-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F2786bf808843b56a0e0feda1c1747cf73673d989-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F2786bf808843b56a0e0feda1c1747cf73673d989-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F2786bf808843b56a0e0feda1c1747cf73673d989-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F2786bf808843b56a0e0feda1c1747cf73673d989-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F2786bf808843b56a0e0feda1c1747cf73673d989-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+              src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F2786bf808843b56a0e0feda1c1747cf73673d989-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/lifestyle">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-purple-600">
+                  Lifestyle
+                </span>
+              </a>
+              <a href="/category/personal-growth">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-emerald-700">
+                  Personal Growth
+                </span>
+              </a>
+            </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/every-next-level-of-your-life-will-demand-a-different-you">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  Every Next Level of Your Life Will Demand a Different You
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/every-next-level-of-your-life-will-demand-a-different-you">
+                  That was so fun! I’ve got a new addiction! my athlete friend
+                  exclaimed, tired but happy in the car on the way home. “Let’s
+                  do it again tomorrow.”
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/mario-sanchez">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Mario Sanchez"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
+                  </div>
+                  <span className="truncate text-sm">Mario Sanchez</span>
+                </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">October 20, 2022</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-square"
+            href="/post/this-bread-pudding-will-give-you-all-the-fall-feels"
+          >
+            <img
+              alt="Thumbnail"
+              loading="lazy"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fb7d2fa6d0b250bd1e0c601645319db4cde42a01e-3958x5937.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fb7d2fa6d0b250bd1e0c601645319db4cde42a01e-3958x5937.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fb7d2fa6d0b250bd1e0c601645319db4cde42a01e-3958x5937.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fb7d2fa6d0b250bd1e0c601645319db4cde42a01e-3958x5937.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fb7d2fa6d0b250bd1e0c601645319db4cde42a01e-3958x5937.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fb7d2fa6d0b250bd1e0c601645319db4cde42a01e-3958x5937.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fb7d2fa6d0b250bd1e0c601645319db4cde42a01e-3958x5937.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fb7d2fa6d0b250bd1e0c601645319db4cde42a01e-3958x5937.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fb7d2fa6d0b250bd1e0c601645319db4cde42a01e-3958x5937.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fb7d2fa6d0b250bd1e0c601645319db4cde42a01e-3958x5937.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+              src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fb7d2fa6d0b250bd1e0c601645319db4cde42a01e-3958x5937.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/travel">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-orange-700">
+                  Travel
+                </span>
+              </a>
+            </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/this-bread-pudding-will-give-you-all-the-fall-feels">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  This Bread Pudding Will Give You All the Fall Feels
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/this-bread-pudding-will-give-you-all-the-fall-feels">
+                  I learned this when I traveled to a remote resort to deliver
+                  what was supposed to be a talk for a group of tech investors.
+                  It turned out to be something of a “consult” to five
+                  ultra-wealthy men.
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/erika-oliver">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Erika Oliver"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
+                  </div>
+                  <span className="truncate text-sm">Erika Oliver</span>
+                </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">October 19, 2022</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-square"
+            href="/post/i-moved-across-the-country-and-never-looked-back"
+          >
+            <img
+              alt="Thumbnail"
+              loading="lazy"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fa5bd8977e7fd82666c00a45948583b1f9912d392-3847x5583.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fa5bd8977e7fd82666c00a45948583b1f9912d392-3847x5583.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fa5bd8977e7fd82666c00a45948583b1f9912d392-3847x5583.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fa5bd8977e7fd82666c00a45948583b1f9912d392-3847x5583.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fa5bd8977e7fd82666c00a45948583b1f9912d392-3847x5583.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fa5bd8977e7fd82666c00a45948583b1f9912d392-3847x5583.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fa5bd8977e7fd82666c00a45948583b1f9912d392-3847x5583.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fa5bd8977e7fd82666c00a45948583b1f9912d392-3847x5583.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fa5bd8977e7fd82666c00a45948583b1f9912d392-3847x5583.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fa5bd8977e7fd82666c00a45948583b1f9912d392-3847x5583.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+              src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fa5bd8977e7fd82666c00a45948583b1f9912d392-3847x5583.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/travel">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-orange-700">
+                  Travel
+                </span>
+              </a>
+            </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/i-moved-across-the-country-and-never-looked-back">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  I Moved Across the Country and Never Looked Back
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/i-moved-across-the-country-and-never-looked-back">
+                  I recently went to the mountains with my friends. We were
+                  celebrating 50 years of friendship. It was very special. Six
+                  of us were to be together spending time in the mountains.
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/joshua-wood">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Joshua Wood"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
+                  </div>
+                  <span className="truncate text-sm">Joshua Wood</span>
+                </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">October 19, 2022</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-square"
+            href="/post/3-meaningful-ways-to-practice-self-care-as-an-introvert"
+          >
+            <img
+              alt="Thumbnail"
+              loading="lazy"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc366d5116a51d3f1d8b23962e6b7caac7c960f81-7855x5240.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc366d5116a51d3f1d8b23962e6b7caac7c960f81-7855x5240.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc366d5116a51d3f1d8b23962e6b7caac7c960f81-7855x5240.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc366d5116a51d3f1d8b23962e6b7caac7c960f81-7855x5240.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc366d5116a51d3f1d8b23962e6b7caac7c960f81-7855x5240.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc366d5116a51d3f1d8b23962e6b7caac7c960f81-7855x5240.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc366d5116a51d3f1d8b23962e6b7caac7c960f81-7855x5240.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc366d5116a51d3f1d8b23962e6b7caac7c960f81-7855x5240.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc366d5116a51d3f1d8b23962e6b7caac7c960f81-7855x5240.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc366d5116a51d3f1d8b23962e6b7caac7c960f81-7855x5240.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+              src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc366d5116a51d3f1d8b23962e6b7caac7c960f81-7855x5240.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/personal-growth">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-emerald-700">
+                  Personal Growth
+                </span>
+              </a>
+            </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/3-meaningful-ways-to-practice-self-care-as-an-introvert">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  3 Meaningful Ways to Practice Self-Care as an Introvert
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/3-meaningful-ways-to-practice-self-care-as-an-introvert">
+                  While AI has proved superior at complex calculations &amp;
+                  predictions, creativity seemed to be the domain that machines
+                  can’t take over.
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/mario-sanchez">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Mario Sanchez"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
+                  </div>
+                  <span className="truncate text-sm">Mario Sanchez</span>
+                </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">October 18, 2022</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-square"
+            href="/post/the-rise-of-artificial-intelligence-and-the-future-of-humans"
+          >
+            <img
+              alt="Thumbnail"
+              loading="lazy"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fe60f8ab265df3c22fdde5469de54d225017b7323-4000x5000.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fe60f8ab265df3c22fdde5469de54d225017b7323-4000x5000.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fe60f8ab265df3c22fdde5469de54d225017b7323-4000x5000.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fe60f8ab265df3c22fdde5469de54d225017b7323-4000x5000.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fe60f8ab265df3c22fdde5469de54d225017b7323-4000x5000.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fe60f8ab265df3c22fdde5469de54d225017b7323-4000x5000.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fe60f8ab265df3c22fdde5469de54d225017b7323-4000x5000.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fe60f8ab265df3c22fdde5469de54d225017b7323-4000x5000.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fe60f8ab265df3c22fdde5469de54d225017b7323-4000x5000.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fe60f8ab265df3c22fdde5469de54d225017b7323-4000x5000.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+              src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fe60f8ab265df3c22fdde5469de54d225017b7323-4000x5000.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/personal-growth">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-emerald-700">
+                  Personal Growth
+                </span>
+              </a>
+            </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/the-rise-of-artificial-intelligence-and-the-future-of-humans">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  The Rise of Artificial Intelligence and the Future of Humans
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/the-rise-of-artificial-intelligence-and-the-future-of-humans">
+                  While AI has proved superior at complex calculations &amp;
+                  predictions, creativity seemed to be the domain that machines
+                  can’t take over.
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/joshua-wood">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Joshua Wood"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
+                  </div>
+                  <span className="truncate text-sm">Joshua Wood</span>
+                </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">October 18, 2022</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-square"
+            href="/post/10-simple-practices-that-will-help-you-get-1-better-every-day"
+          >
+            <img
+              alt="Thumbnail"
+              loading="lazy"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F86cb3a2f0e43610371a7184483c5567bd9e6e94f-2400x1600.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F86cb3a2f0e43610371a7184483c5567bd9e6e94f-2400x1600.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F86cb3a2f0e43610371a7184483c5567bd9e6e94f-2400x1600.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F86cb3a2f0e43610371a7184483c5567bd9e6e94f-2400x1600.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F86cb3a2f0e43610371a7184483c5567bd9e6e94f-2400x1600.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F86cb3a2f0e43610371a7184483c5567bd9e6e94f-2400x1600.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F86cb3a2f0e43610371a7184483c5567bd9e6e94f-2400x1600.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F86cb3a2f0e43610371a7184483c5567bd9e6e94f-2400x1600.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F86cb3a2f0e43610371a7184483c5567bd9e6e94f-2400x1600.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F86cb3a2f0e43610371a7184483c5567bd9e6e94f-2400x1600.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+              src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F86cb3a2f0e43610371a7184483c5567bd9e6e94f-2400x1600.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/personal-growth">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-emerald-700">
+                  Personal Growth
+                </span>
+              </a>
+            </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/10-simple-practices-that-will-help-you-get-1-better-every-day">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  10 Simple Practices That Will Help You Get 1% Better Every Day
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/10-simple-practices-that-will-help-you-get-1-better-every-day">
+                  How do we become better every single day? We develop practices
+                  that will help move us incrementally forward. Small steps,
+                  taken consistently. This is the path to a good life.
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/erika-oliver">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Erika Oliver"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
+                  </div>
+                  <span className="truncate text-sm">Erika Oliver</span>
+                </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">October 04, 2022</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-square"
+            href="/post/every-artist-has-to-see-the-amazing-pictures-on-the-internet"
+          >
+            <img
+              alt="Thumbnail"
+              loading="lazy"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F279c03681911845947cd044b4ac9e91d7a3a628c-987x1481.png%3Fw%3D987%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F279c03681911845947cd044b4ac9e91d7a3a628c-987x1481.png%3Fw%3D987%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F279c03681911845947cd044b4ac9e91d7a3a628c-987x1481.png%3Fw%3D987%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F279c03681911845947cd044b4ac9e91d7a3a628c-987x1481.png%3Fw%3D987%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F279c03681911845947cd044b4ac9e91d7a3a628c-987x1481.png%3Fw%3D987%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F279c03681911845947cd044b4ac9e91d7a3a628c-987x1481.png%3Fw%3D987%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F279c03681911845947cd044b4ac9e91d7a3a628c-987x1481.png%3Fw%3D987%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F279c03681911845947cd044b4ac9e91d7a3a628c-987x1481.png%3Fw%3D987%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F279c03681911845947cd044b4ac9e91d7a3a628c-987x1481.png%3Fw%3D987%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F279c03681911845947cd044b4ac9e91d7a3a628c-987x1481.png%3Fw%3D987%26auto%3Dformat&w=3840&q=75 3840w"
+              src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F279c03681911845947cd044b4ac9e91d7a3a628c-987x1481.png%3Fw%3D987%26auto%3Dformat&w=3840&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/design">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-blue-600">
+                  Design
+                </span>
+              </a>
+            </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/every-artist-has-to-see-the-amazing-pictures-on-the-internet">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  Every Artist has to see the Amazing Pictures on the Internet
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/every-artist-has-to-see-the-amazing-pictures-on-the-internet">
+                  While AI has proved superior at complex calculations &amp;
+                  predictions, creativity seemed to be the domain that machines
+                  can’t take over.
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/mario-sanchez">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Mario Sanchez"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
+                  </div>
+                  <span className="truncate text-sm">Mario Sanchez</span>
+                </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">October 02, 2022</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-square"
+            href="/post/how-technology-evolved-under-the-bright-sun-of-universe"
+          >
+            <img
+              alt="Thumbnail"
+              loading="lazy"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F123fb8836aaf097b83d4c5e8fde544dd1747af0d-5064x3376.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F123fb8836aaf097b83d4c5e8fde544dd1747af0d-5064x3376.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F123fb8836aaf097b83d4c5e8fde544dd1747af0d-5064x3376.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F123fb8836aaf097b83d4c5e8fde544dd1747af0d-5064x3376.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F123fb8836aaf097b83d4c5e8fde544dd1747af0d-5064x3376.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F123fb8836aaf097b83d4c5e8fde544dd1747af0d-5064x3376.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F123fb8836aaf097b83d4c5e8fde544dd1747af0d-5064x3376.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F123fb8836aaf097b83d4c5e8fde544dd1747af0d-5064x3376.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F123fb8836aaf097b83d4c5e8fde544dd1747af0d-5064x3376.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F123fb8836aaf097b83d4c5e8fde544dd1747af0d-5064x3376.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+              src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F123fb8836aaf097b83d4c5e8fde544dd1747af0d-5064x3376.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/technology">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-blue-600">
+                  Technology
+                </span>
+              </a>
+            </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/how-technology-evolved-under-the-bright-sun-of-universe">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  How Technology Evolved Under the Bright Sun of Universe
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/how-technology-evolved-under-the-bright-sun-of-universe">
+                  The evolution of technology in astronomy and how it has
+                  impacted our understanding of the universe. It also gives a
+                  brief history of the major figures that the science through
+                  their innovations{" "}
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/erika-oliver">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Erika Oliver"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
+                  </div>
+                  <span className="truncate text-sm">Erika Oliver</span>
+                </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">September 30, 2022</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-square"
+            href="/post/lessons-of-happiness-i-learned-from-a-mountain-village"
+          >
+            <img
+              alt="Thumbnail"
+              loading="lazy"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F5be1635417f1814b3fb09f8e9f74f37079899f72-4032x3024.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F5be1635417f1814b3fb09f8e9f74f37079899f72-4032x3024.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F5be1635417f1814b3fb09f8e9f74f37079899f72-4032x3024.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F5be1635417f1814b3fb09f8e9f74f37079899f72-4032x3024.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F5be1635417f1814b3fb09f8e9f74f37079899f72-4032x3024.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F5be1635417f1814b3fb09f8e9f74f37079899f72-4032x3024.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F5be1635417f1814b3fb09f8e9f74f37079899f72-4032x3024.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F5be1635417f1814b3fb09f8e9f74f37079899f72-4032x3024.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F5be1635417f1814b3fb09f8e9f74f37079899f72-4032x3024.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F5be1635417f1814b3fb09f8e9f74f37079899f72-4032x3024.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+              src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F5be1635417f1814b3fb09f8e9f74f37079899f72-4032x3024.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/travel">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-orange-700">
+                  Travel
+                </span>
+              </a>
+            </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/lessons-of-happiness-i-learned-from-a-mountain-village">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  Lessons Of Happiness I learned from a Mountain Village
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/lessons-of-happiness-i-learned-from-a-mountain-village">
+                  I recently went to the mountains with my friends. We were
+                  celebrating 50 years of friendship. It was very special. Six
+                  of us were to be together spending time in the mountains.
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/joshua-wood">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Joshua Wood"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fcd477178ed12f28ef668adaf9fcae6b8fc351a08-4480x6415.jpg%3Frect%3D0%2C0%2C4480%2C3760%26w%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
+                  </div>
+                  <span className="truncate text-sm">Joshua Wood</span>
+                </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">September 25, 2022</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-square"
+            href="/post/there-s-nothing-new-about-undermining-women-s-autonomy"
+          >
+            <img
+              alt="Thumbnail"
+              loading="lazy"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc8e84acf383034b5b65181b9c4bb97069268d12e-4608x3072.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc8e84acf383034b5b65181b9c4bb97069268d12e-4608x3072.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc8e84acf383034b5b65181b9c4bb97069268d12e-4608x3072.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc8e84acf383034b5b65181b9c4bb97069268d12e-4608x3072.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc8e84acf383034b5b65181b9c4bb97069268d12e-4608x3072.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc8e84acf383034b5b65181b9c4bb97069268d12e-4608x3072.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc8e84acf383034b5b65181b9c4bb97069268d12e-4608x3072.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc8e84acf383034b5b65181b9c4bb97069268d12e-4608x3072.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc8e84acf383034b5b65181b9c4bb97069268d12e-4608x3072.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc8e84acf383034b5b65181b9c4bb97069268d12e-4608x3072.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+              src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2Fc8e84acf383034b5b65181b9c4bb97069268d12e-4608x3072.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/lifestyle">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-purple-600">
+                  Lifestyle
+                </span>
+              </a>
+            </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/there-s-nothing-new-about-undermining-women-s-autonomy">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  There’s Nothing New About Undermining Women’s Autonomy
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/there-s-nothing-new-about-undermining-women-s-autonomy">
+                  In2007, the now-defunct San Antonio Independent Christian Film
+                  Festival awarded Best of Festival to a documentary called The
+                  Monstrous Regiment of Women a film that simultaneously.
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/erika-oliver">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Erika Oliver"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
+                  </div>
+                  <span className="truncate text-sm">Erika Oliver</span>
+                </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">September 23, 2022</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="group cursor-pointer">
+        <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+          <a
+            className="relative block aspect-square"
+            href="/post/escape-fantasies-of-the-tech-billionaires"
+          >
+            <img
+              alt="Thumbnail"
+              loading="lazy"
+              decoding="async"
+              data-nimg="fill"
+              className="object-cover transition-all"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                inset: 0,
+                color: "transparent"
+              }}
+              sizes="(max-width: 768px) 30vw, 33vw"
+              srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F35b405aec2066d3172a1e6ec7acb8f5c4136b6d6-2070x1380.png%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F35b405aec2066d3172a1e6ec7acb8f5c4136b6d6-2070x1380.png%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F35b405aec2066d3172a1e6ec7acb8f5c4136b6d6-2070x1380.png%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F35b405aec2066d3172a1e6ec7acb8f5c4136b6d6-2070x1380.png%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F35b405aec2066d3172a1e6ec7acb8f5c4136b6d6-2070x1380.png%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F35b405aec2066d3172a1e6ec7acb8f5c4136b6d6-2070x1380.png%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F35b405aec2066d3172a1e6ec7acb8f5c4136b6d6-2070x1380.png%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F35b405aec2066d3172a1e6ec7acb8f5c4136b6d6-2070x1380.png%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F35b405aec2066d3172a1e6ec7acb8f5c4136b6d6-2070x1380.png%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F35b405aec2066d3172a1e6ec7acb8f5c4136b6d6-2070x1380.png%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+              src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F35b405aec2066d3172a1e6ec7acb8f5c4136b6d6-2070x1380.png%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+            />
+          </a>
+        </div>
+        <div className="">
+          <div>
+            <div className="flex gap-3">
+              <a href="/category/technology">
+                <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-blue-600">
+                  Technology
+                </span>
+              </a>
+            </div>
+            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+              <a href="/post/escape-fantasies-of-the-tech-billionaires">
+                <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+                  Escape Fantasies of the Tech Billionaires
+                </span>
+              </a>
+            </h2>
+            <div className="hidden">
+              <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+                <a href="/post/escape-fantasies-of-the-tech-billionaires">
+                  I learned this when I traveled to a remote resort to deliver
+                  what was supposed to be a talk for a group of tech investors.
+                  It turned out to be something of a “consult” to five
+                  ultra-wealthy men.
+                </a>
+              </p>
+            </div>
+            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+              <a href="/author/erika-oliver">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-5 w-5 flex-shrink-0">
+                    <img
+                      alt="Erika Oliver"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="rounded-full object-cover"
+                      style={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        color: "transparent"
+                      }}
+                      sizes="20px"
+                      srcSet="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75 3840w"
+                      src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4e20f048a69ac41ab7a6b5f1687f0547379b7469-3648x5472.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+                    />
+                  </div>
+                  <span className="truncate text-sm">Erika Oliver</span>
+                </div>
+              </a>
+              <span className="text-xs text-gray-300 dark:text-gray-600">
+                •
+              </span>
+              <time className="truncate text-sm">September 21, 2022</time>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="mt-10 flex justify-center">
+      <a
+        className="relative inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-3 py-2 pl-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 disabled:pointer-events-none disabled:opacity-40 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300"
+        href="/archive"
+      >
+        <span>View all Posts</span>
+      </a>
+    </div>
+  </div>
+  </>
   );
 };
 

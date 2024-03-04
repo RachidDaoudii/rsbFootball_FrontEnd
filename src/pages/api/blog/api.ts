@@ -1,13 +1,12 @@
 import axios from "axios";
 
-
 export const axiosInstance = axios.create({
-    baseURL: "http://localhost:4000/api/auth",
-    withCredentials: true,  
+    baseURL: "http://localhost:4001/api/v1",
+    withCredentials: true,
     headers: {
         'Content-Type': 'application/json',
     },
-
+  
 });
 
 class APIClient {
@@ -31,13 +30,13 @@ class APIClient {
   
     post = (body:any) => {
       return axiosInstance
-        .post(`${this.endpoint}`,body)
+        .post(`${this.endpoint}`, body)
         .then((res) => res.data);
     };
   
-    put = (id:any,body:any) => {
+    put = (id:any, body:any) => {
       return axiosInstance
-        .put(`${this.endpoint}/${id}`,body)
+        .put(`${this.endpoint}/${id}`, body)
         .then((res) => res.data);
     };
   
@@ -46,6 +45,6 @@ class APIClient {
         .delete(`${this.endpoint}/${id}`)
         .then((res) => res.data);
     };
-  }
-  
-  export default APIClient;
+}
+
+export default APIClient;
