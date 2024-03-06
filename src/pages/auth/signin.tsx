@@ -2,11 +2,10 @@
 import Image from "next/image";
 import image from "../../styles/images/logo.png";
 import Link from "next/link";
-import { useSignIn } from "@/@api/auth";
+import { usesignin } from "../api/auth/serviceAuth";
 
 export default function login() {
-  const usesignin = useSignIn();
-  const { handleInputChange, handleSubmit } = usesignin;
+  const { handleInputChange, handleSubmit } = usesignin();
   return (
     <div>
       <div className="grid w-full grow grid-cols-1 place-items-center">

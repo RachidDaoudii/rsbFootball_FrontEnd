@@ -1,0 +1,96 @@
+import Link from "next/link";
+import { useRouter } from 'next/router';
+import {formatDate} from "@/components/dateTime/formatDate";
+const CardItem = ({blog}) => {
+
+    return (<div className="group cursor-pointer">
+    <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
+      <Link
+        className="relative block aspect-square"
+        href={{
+          pathname: '/blog/blog-details/[id]',
+          query: { id: blog.id},
+        }}
+      >
+        <img
+          alt="Thumbnail"
+          loading="lazy"
+          decoding="async"
+          data-nimg="fill"
+          className="object-cover transition-all"
+          style={{
+            position: "absolute",
+            height: "100%",
+            width: "100%",
+            inset: 0,
+            color: "transparent"
+          }}
+          sizes="(max-width: 768px) 30vw, 33vw"
+          src={blog?.image}
+        />
+      </Link>
+    </div>
+    <div className="">
+      <div>
+        <div className="flex gap-3">
+          <a href="/category/design">
+            <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-blue-600">
+              {blog.categories.name}
+            </span>
+          </a>
+        </div>
+        <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
+          <Link href={`/blog/blog-details/${blog.id}`}>
+            <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">
+              {blog.title}
+            </span>
+          </Link>
+        </h2>
+        <div className="hidden">
+          <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
+            <a href="/post/14-architectural-design-ideas-for-spacious-interior">
+              It is a cliche philosophical question, but it touches on
+              something fundamental about how humans relate to the world
+              around them.{" "}
+            </a>
+          </p>
+        </div>
+        <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+          <Link href="/author/mario-sanchez">
+            <div className="flex items-center gap-3">
+              <div className="relative h-5 w-5 flex-shrink-0">
+                <img
+                  alt="Mario Sanchez"
+                  loading="lazy"
+                  decoding="async"
+                  data-nimg="fill"
+                  className="rounded-full object-cover"
+                  style={{
+                    position: "absolute",
+                    height: "100%",
+                    width: "100%",
+                    left: 0,
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    color: "transparent"
+                  }}
+                  sizes="20px"
+                  srcSet="https://stablo-template.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F05951a0ec1a6ffc54f615ab160649e92fea982d0-800x764.png%3Frect%3D0%2C0%2C800%2C468%26w%3D800%26auto%3Dformat&w=640&q=75"
+                  src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F4a21e3f085ed310d00fbbd294eb2392cde7f9acc-3648x3648.jpg%3Fw%3D2000%26auto%3Dformat&w=3840&q=75"
+                />
+              </div>
+              <span className="truncate text-sm">{blog.users.lastName +" "+blog.users.firstName  }</span>
+            </div>
+          </Link>
+          <span className="text-xs text-gray-300 dark:text-gray-600">
+            •
+          </span>
+          <time className="truncate text-sm">{formatDate(blog.createdAt)}</time>
+        </div>
+      </div>
+    </div>
+  </div>)
+}
+
+export default CardItem;
