@@ -6,11 +6,14 @@ import"@/components/PrelineScript";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
+  const {route} = router
   return (
     <>
-      <div className="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm py-3 md:py-0 nav border-gray-200 dark:border-gray-600 dark:bg-gray-900 bg-gray-800">
+      <div className={`flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm py-3 md:py-0 nav border-gray-200 dark:border-gray-600 dark:bg-gray-900 ${route === '/'? "":"bg-gray-800"}`}>
         <nav
           className="max-w-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8"
           aria-label="Global"
@@ -123,9 +126,9 @@ export default function Home() {
                                 Playres
                               </span>
 
-                              <a
+                              <Link
                                 className="flex gap-x-4 text-white hover:text-blue-600 dark:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                                href="#"
+                                href="/categories"
                               >
                                 <svg
                                   className="flex-shrink-0 size-4"
@@ -143,9 +146,9 @@ export default function Home() {
                                   <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
                                 </svg>
                                 <div className="grow">
-                                  <p>Support Docs</p>
+                                  <p>Categories</p>
                                 </div>
-                              </a>
+                              </Link>
 
                               <a
                                 className="flex gap-x-4 text-white hover:text-blue-600 dark:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"

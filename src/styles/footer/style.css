@@ -1414,3 +1414,14 @@
   background-position: center;
   width: 100%;
 }
+
+::-webkit-scrollbar
+{
+    width: 0;
+}
+
+
+
+
+
+/* background: linear-gradient(180deg, rgba(15, 33, 69, 0) 0%, #2b35482e 100%); */

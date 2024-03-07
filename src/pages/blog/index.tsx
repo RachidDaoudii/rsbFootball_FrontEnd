@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import CardTwoItem from "@/components/Blog/CardTwoItem";
 import CardItem from "@/components/Blog/CardItem";
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import Header from "@/components/Header/2";
 import Footer from "@/components/footer";
 import type { NextPage } from "next";
@@ -17,7 +17,6 @@ const [blogs,setBlogs] = useState([])
 
 
   useEffect(() => {
-    
     if(isSuccess){
       setBlogs(data)
     }
