@@ -2,11 +2,10 @@
 import Image from "next/image";
 import image from "../../styles/images/logo.png";
 import Link from "next/link";
-import { useSignUp } from "@/@api/auth";
+import { usesignup } from "../api/auth/serviceAuth";
 export default function register() {
-  const usesignup = useSignUp();
 
-  const { handleInputChange, handleSubmit } = usesignup;
+  const { handleInputChange, handleSubmit } = usesignup();
 
   return (
     <div>

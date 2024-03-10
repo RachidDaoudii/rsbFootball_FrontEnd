@@ -7,13 +7,29 @@ export type Author = {
 };
 
 export type Blog = {
-  _id: number;
+  id: number;
+  image:string;
   title: string;
-  slug?: any;
-  metadata?: string;
-  body?: string;
-  mainImage?: any;
-  author?: Author;
-  tags?: string[];
-  publishedAt?: string;
+  createdAt:string;
+  categories:{
+    name:string
+  },
+  users:{
+    lastName:string,
+    firstName:string
+  }
 };
+
+
+
+export type categoriesPlayer={
+  id: number;
+  image:string;
+  name: string;
+}
+
+export type comment={
+  id:number;
+  content:string;
+  createdAt:string;
+}

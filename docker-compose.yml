@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  nextjs-app:
+    container_name: rsb-football-front
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    # depends_on:
+    #   - api-server
+
+  # api-server:
+  #   container_name: api-container
+  #   build:
+  #     context: ./api  # Path to your API server Dockerfile and code
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "5000:5000"
+  #   environment:
+  #     - NODE_ENV=production

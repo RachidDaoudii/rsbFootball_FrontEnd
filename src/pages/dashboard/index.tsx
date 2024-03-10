@@ -1,8 +1,5 @@
 "use Client";
-import {
-  UploadButton,
-  UploadDropzone,
-} from "@/components/utils/uploadthing/uploadthing";
+
 import Header from "@/components/layout/dashboard/Header";
 import Sidebar from "@/components/layout/dashboard/Sidebar";
 import type { AppProps } from "next/app";
@@ -11,7 +8,7 @@ import { ReactNode, useState } from "react";
 const Dashboard = ({ children }: { children: ReactNode }) => {
   return (
     <div>
-      <div className=" dark:bg-slate-900">
+      <div className=" dark:bg-white">
         <Header/>
         <Sidebar/>
 
@@ -158,14 +155,3 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
 };
 
 export default Dashboard;
-{/* <UploadButton
-  endpoint="imageUploader"
-  className="mt-4 ut-button:bg-red-500 ut-button:ut-readying:bg-red-500/50"
-  onClientUploadComplete={(res) => {
-    console.log(res[0].url);
-  }}
-  onUploadError={(error: Error) => {
-    // Do something with the error.
-    alert(`ERROR! ${error.message}`);
-  }}
-/> */}

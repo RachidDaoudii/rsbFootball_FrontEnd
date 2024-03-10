@@ -1,11 +1,13 @@
 import type { Config } from "tailwindcss";
 import { withUt } from "uploadthing/tw";
-const config: Config = withUt({
+const withMT = require("@material-tailwind/react/utils/withMT");
+const config: Config = withMT({
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/preline/preline.js",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
@@ -19,5 +21,6 @@ const config: Config = withUt({
   plugins: [require("preline/plugin")],
   darkMode: "className",
 });
+
 
 export default config;

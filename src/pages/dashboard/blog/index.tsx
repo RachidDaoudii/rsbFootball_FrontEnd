@@ -1,7 +1,15 @@
 "use Client";
 import LayoutDashboard from "../index" 
 import Table from "@/components/Tables/users"
+
+// import {useGetAllPosts} from "@/@api/blog/post";
 const BlogDashboard = ()=>{
+
+  // const {Mutation} = useGetAllPosts()
+
+  // const {Mutation} =useGetAllposts;
+
+  // Mutation.post()
 return (
     <LayoutDashboard>
         <div>
