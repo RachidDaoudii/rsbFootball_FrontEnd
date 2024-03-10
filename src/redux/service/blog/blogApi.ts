@@ -23,9 +23,7 @@ export const blogApi = ApiSliceBlog.injectEndpoints({
     }),
   }),
 });
-console.log("ApiSliceBlog:", ApiSliceBlog); // Check ApiSliceBlog
-console.log("Endpoints:", blogApi.endpoints); // Check if endpoints are defined
-console.log("Definitions:", blogApi.definitions); // Check the definitions object
+
 export const {
   useBlogQuery,
   useGetOnePostQuery,

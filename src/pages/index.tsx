@@ -10,6 +10,7 @@ import { useEffect } from 'react'
 
 import { motion } from 'framer-motion';
 
+
 export default function Home() {
 
   return (
@@ -187,6 +188,8 @@ export default function Home() {
           </div>
 
           <Footer/>
+
+          
     </>
   );
 }

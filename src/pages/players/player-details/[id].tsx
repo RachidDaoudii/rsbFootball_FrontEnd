@@ -3,7 +3,12 @@ import img from "@/styles/images/player/kevin-de-bruyne.webp";
 import logo from "@/styles/images/footer/logo.png";
 import Header from "@/components/Header/2";
 import Footer from "@/components/footer";
+import RadarChart from "@/components/charts/radar";
+import { useRouter } from 'next/router';
+
 const Player = () => {
+  const router = useRouter();
+    const { id } =  router.query;
   return (
     <>
      <Header />
@@ -32,8 +37,13 @@ const Player = () => {
               </div>
               <div className="photo_player">
                 <Image id="photo_player" className="" src={img} alt="" />
+                <div>
+                <RadarChart/>
               </div>
+              </div>
+             
             </div>
+     
           </div>
         </div>
         <div className="section m_player_info_new max-w-screen" id="playerinfo">
@@ -49,6 +59,7 @@ const Player = () => {
                   odio? Vitae reiciendis, atque at quis, odio harum sunt eaque
                   quas, repellat est quibusdam.
                 </div>
+                
               </div>
               <div className="stats">
                 <h2 className="title">
@@ -127,6 +138,7 @@ const Player = () => {
         </div>
       </div>
     </div>
+ 
     <div>
       <Footer/>
     </div>

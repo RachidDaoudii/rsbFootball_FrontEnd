@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import {formatDate} from "@/components/dateTime/formatDate";
-const CardItem = ({blog}) => {
+import { Blog } from "@/types/blog";
+const CardItem = ({blog}: { blog: Blog }) => {
 
     return (<div className="group cursor-pointer">
     <div className=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
@@ -9,7 +10,7 @@ const CardItem = ({blog}) => {
         className="relative block aspect-square"
         href={{
           pathname: '/blog/blog-details/[id]',
-          query: { id: blog.id},
+          query: { id: blog?.id},
         }}
       >
         <img

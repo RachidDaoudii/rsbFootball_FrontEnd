@@ -10,7 +10,7 @@ const SectionProducts = ()=>{
         <img
           className="h-48 w-full rounded-2xl object-cover object-center"
           src="https://images.unsplash.com/photo-1669828230990-9b8583a877ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1062&q=80" alt="Image Description"
-          alt="image"
+        
         />
         <div className="card mx-2 -mt-8 grow rounded-2xl p-3.5 bg-white">
           <div className="flex space-x-2">
@@ -61,7 +61,7 @@ const SectionProducts = ()=>{
         <img
           className="h-48 w-full rounded-2xl object-cover object-center"
           src="https://images.unsplash.com/photo-1669828230990-9b8583a877ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1062&q=80"
-          alt="image"
+          alt=""
         />
         <div className="card mx-2 -mt-8 grow rounded-2xl p-3.5 bg-white">
           <div className="flex space-x-2">
@@ -113,7 +113,7 @@ const SectionProducts = ()=>{
         <img
           className="h-48 w-full rounded-2xl object-cover object-center"
           src="https://images.unsplash.com/photo-1669828230990-9b8583a877ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1062&q=80"
-          alt="image"
+          alt=""
         />
         <div className="card mx-2 -mt-8 grow rounded-2xl p-3.5 bg-white">
           <div className="flex space-x-2">
@@ -165,7 +165,7 @@ const SectionProducts = ()=>{
         <img
           className="h-48 w-full rounded-2xl object-cover object-center"
           src="https://images.unsplash.com/photo-1669828230990-9b8583a877ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1062&q=80"
-          alt="image"
+          alt=""
         />
         <div className="card mx-2 -mt-8 grow rounded-2xl p-3.5 bg-white">
           <div className="flex space-x-2">
@@ -217,7 +217,7 @@ const SectionProducts = ()=>{
         <img
           className="h-48 w-full rounded-2xl object-cover object-center"
           src="https://images.unsplash.com/photo-1669828230990-9b8583a877ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1062&q=80"
-          alt="image"
+          alt=""
         />
         <div className="card mx-2 -mt-8 grow rounded-2xl p-3.5 bg-white">
           <div className="flex space-x-2">
@@ -269,7 +269,7 @@ const SectionProducts = ()=>{
         <img
           className="h-48 w-full rounded-2xl object-cover object-center"
           src="https://images.unsplash.com/photo-1669828230990-9b8583a877ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1062&q=80"
-          alt="image"
+          alt=""
         />
         <div className="card mx-2 -mt-8 grow rounded-2xl p-3.5 bg-white">
           <div className="flex space-x-2">
@@ -321,7 +321,7 @@ const SectionProducts = ()=>{
         <img
           className="h-48 w-full rounded-2xl object-cover object-center"
           src="https://images.unsplash.com/photo-1669828230990-9b8583a877ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1062&q=80"
-          alt="image"
+          alt=""
         />
         <div className="card mx-2 -mt-8 grow rounded-2xl p-3.5 bg-white">
           <div className="flex space-x-2">
@@ -373,7 +373,7 @@ const SectionProducts = ()=>{
         <img
           className="h-48 w-full rounded-2xl object-cover object-center"
           src="https://images.unsplash.com/photo-1669828230990-9b8583a877ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1062&q=80"
-          alt="image"
+          alt=""
         />
         <div className="card mx-2 -mt-8 grow rounded-2xl p-3.5 bg-white">
           <div className="flex space-x-2">
@@ -425,7 +425,7 @@ const SectionProducts = ()=>{
         <img
           className="h-48 w-full rounded-2xl object-cover object-center"
           src="https://images.unsplash.com/photo-1669828230990-9b8583a877ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1062&q=80"
-          alt="image"
+          alt=""
         />
         <div className="card mx-2 -mt-8 grow rounded-2xl p-3.5 bg-white">
           <div className="flex space-x-2">
@@ -477,7 +477,7 @@ const SectionProducts = ()=>{
         <img
           className="h-48 w-full rounded-2xl object-cover object-center"
           src="https://images.unsplash.com/photo-1669828230990-9b8583a877ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1062&q=80"
-          alt="image"
+          alt=""
         />
         <div className="card mx-2 -mt-8 grow rounded-2xl p-3.5 bg-white">
           <div className="flex space-x-2">

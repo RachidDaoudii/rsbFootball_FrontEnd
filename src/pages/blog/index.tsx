@@ -10,6 +10,7 @@ import type { NextPage } from "next";
 import { useBlog } from "@/pages/api/blog/serviceBlog";
 import Link from "next/link";
 import {formatDate} from "@/components/dateTime/formatDate";
+import Spinner from "@/components/spinner";
 
 const LigthMode: NextPage = () => {
   const {data, error, isLoading, refetch,isSuccess } = useBlog()
@@ -22,14 +23,16 @@ const [blogs,setBlogs] = useState([])
     }
   },[isSuccess])
 
+
   return (
     <>
      <Header />
     <div className="container px-8 mx-auto xl:px-5  max-w-screen-lg py-5 lg:py-8">
     <div className="grid gap-10 md:grid-cols-2 lg:gap-10 ">
       {/* two */}
-
-      {blogs && blogs.map((blog,i)=>{
+    
+    
+      {isLoading ? <Spinner/> : blogs && blogs.map((blog,i)=>{
         if(i<=1){
           return (
           <div className="group cursor-pointer">

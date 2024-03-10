@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react';
 import Comment from "@/components/comment"
 import { toast } from "react-toastify";
 import { useComment } from "@/pages/api/blog/serviceBlog";
+import Spinner from "@/components/spinner";
 
 
 const SingleBlogPage =  () => {
@@ -48,6 +49,10 @@ const SingleBlogPage =  () => {
     fetchData(); 
   
   }, [id,isLoading,isSuccess, isErrorComment, errorComment, isSuccessComment]);
+  if(isLoading){
+    return(<Spinner/>)
+  }
+
 
   return (
     <>

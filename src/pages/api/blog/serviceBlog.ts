@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 export const useBlog = () => {
     const { data, error, isLoading, refetch ,isSuccess } = useBlogQuery('');
 
+
     return { data, error, isLoading, refetch,isSuccess }
 }
 

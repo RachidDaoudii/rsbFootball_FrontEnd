@@ -1,5 +1,7 @@
 import {formatDate} from "@/components/dateTime/formatDate";
-const Comment = ({comment})=>{
+import { comment } from "@/types/blog";
+
+const Comment = ({comment}:{comment:comment})=>{
     return(<li className="comment even thread-even depth-1 mb-4" id="comment-515">
     <div id="div-comment-515" className="comment-body nc-CommentCard flex ">
       <div className="comment-author vcard">
