@@ -6,30 +6,29 @@ import Header from "@/components/Header/2";
 import Footer from "@/components/footer";
 import RadarChart from "@/components/charts/radar";
 import { useRouter } from 'next/router';
-import {useServicePlayer} from "@/pages/api/club/players/servicePlayer"
+import {useServiceStaff} from "@/pages/api/club/players/servicePlayer"
 import Spinner from "@/components/spinner";
 import { motion } from 'framer-motion';
 
-
 const Player = () => {
   const { 
-    setPlayerId,
-    dataPlayer,
-    isLoadingPlayer,
-    } = useServicePlayer()
+    setStaffId,
+        dataStaff,
+        isLoadingStaff
+    } = useServiceStaff()
   const router = useRouter();
   const { id } =  router.query;
 
   useEffect(()=>{
     if(id){
-      setPlayerId(id)
+      setStaffId(id)
     }
     
-},[id,dataPlayer])
+},[id,dataStaff])
 
-if(isLoadingPlayer){
-  return <Spinner/> 
-} 
+  if(isLoadingStaff){
+    return <Spinner/> 
+  } 
 
   return (
     <>
@@ -40,6 +39,7 @@ if(isLoadingPlayer){
           className="m_full_header_banner main_banner_row overflow with_video bg-stage"
 
         >
+
           <div className="m_player_bio_new ">
             <div className="section section_header flex">
               <div
@@ -63,7 +63,7 @@ if(isLoadingPlayer){
                   whileInView="visible"
                   transition={{ duration: 1, delay: 0.1 }}
                   viewport={{ once: true }} id="place" className="place">
-                  {dataPlayer?.position}
+                    {dataStaff?.role}
                 </motion.div>
                 <motion.div
                   variants={{
@@ -81,26 +81,11 @@ if(isLoadingPlayer){
                   whileInView="visible"
                   transition={{ duration: 2, delay: 0.1 }}
                   viewport={{ once: true }} id="name_player" className=" name_player">
-                  {dataPlayer?.lastname +" "+ dataPlayer?.firstname}
+                  {dataStaff?.lastname +" "+ dataStaff?.firstname}
                 </motion.div>
-                <motion.div
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      x: -20,
-                    },
-
-                    visible: {
-                      opacity: 1,
-                      x: 0,
-                    },
-                  }}
-                  initial="hidden"
-                  whileInView="visible"
-                  transition={{ duration: 2, delay: 0.1 }}
-                  viewport={{ once: true }} id="number_player" className=" number">
-                  {dataPlayer?.number}
-                </motion.div>
+                <div id="number_player" className=" number">
+                  {/* {dataStaff?.number} */}
+                </div>
               </div>
               <motion.div
                 variants={{
@@ -117,10 +102,11 @@ if(isLoadingPlayer){
                 initial="hidden"
                 whileInView="visible"
                 transition={{ duration: 1, delay: 0.1 }}
-                viewport={{ once: true }} className="photo_player">
-                <img id="photo_player" className="" src={dataPlayer?.image} alt="" />
+                viewport={{ once: true }}
+                className="photo_player">
+                <img id="photo_player" className="" src={dataStaff?.image} alt="" />
                 <div>
-                <RadarChart/>
+                {/* <RadarChart/> */}
               </div>
               </motion.div>
              
@@ -137,7 +123,7 @@ if(isLoadingPlayer){
                 </h2>
                 <div className="content">
                   {
-                    dataPlayer?.experience
+                    dataStaff?.experience
                   }
                 </div>
                 
@@ -154,11 +140,11 @@ if(isLoadingPlayer){
                   data-stats-highlights="0,1,2,3"
                 >
                   <ul className="m_teams_stats_list m_player_ministats flex">
-                    <li className="team_stats_column">
+                    {/* <li className="team_stats_column">
                       <p>
                         <span className="team_stats_number" data-stat-value="">
                           {
-                            dataPlayer?.matches_played
+                            dataStaff?.matches_played
                           }
                         </span>
                         <dfn className="team_stats_name" data-stat-title="">
@@ -170,14 +156,14 @@ if(isLoadingPlayer){
                       <p>
                         <span className="team_stats_number" data-stat-value="">
                           {
-                            dataPlayer?.goals_scored
+                            dataStaff?.goals_scored
                           }
                         </span>
                         <dfn className="team_stats_name" data-stat-title="">
                           Buts marqués
                         </dfn>
                       </p>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>
@@ -190,31 +176,31 @@ if(isLoadingPlayer){
                 <div className="col-3-3">
                   <div className="data_info">
                     <h3>Prénom</h3>
-                    <span className="name">{dataPlayer?.lastname +" "+ dataPlayer?.firstname}</span>
+                    <span className="name">{dataStaff?.lastname +" "+ dataStaff?.firstname}</span>
                   </div>
                 </div>
                 <div className="col-2-3">
                   <div className="data_info">
                     <h3>Lieu de naissance</h3>
-                    <span>{dataPlayer?.nationality}</span>
+                    <span>{dataStaff?.nationality}</span>
                   </div>
                   <div className="data_info">
                     <h3>Date de naissance</h3>
-                    <span>{dataPlayer?.Date_of_birth}</span>
+                    <span>{dataStaff?.Date_of_birth}</span>
                   </div>
                   <div className="data_info">
                     <h3>Poste</h3>
-                    <span>{dataPlayer?.position}</span>
+                    <span>{dataStaff?.position}</span>
                   </div>
                 </div>
                 <div className="col-1-3">
                   <div className="data_info">
                     <h3>Poids</h3>
-                    <span>{dataPlayer?.weight} kg</span>
+                    <span>{dataStaff?.weight} kg</span>
                   </div>
                   <div className="data_info">
                     <h3>Taille</h3>
-                    <span>{dataPlayer?.size} cm</span>
+                    <span>{dataStaff?.size} cm</span>
                   </div>
                 </div>
               </div>
@@ -223,7 +209,6 @@ if(isLoadingPlayer){
         </div>
       </div>
     </div>
- 
     <div>
       <Footer/>
     </div>

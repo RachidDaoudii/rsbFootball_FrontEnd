@@ -74,7 +74,7 @@ return(
                                 {
                                     dataCategory?.staff.map((staff:object) => (
                                         <li className="Player__Container-xex65m-0 bCPMQZ">
-                                            <Link className="Player__ContainerLink-xex65m-1 klZRej" href={`player-details/${staff.id}`}>
+                                            <Link className="Player__ContainerLink-xex65m-1 klZRej" href={`staff-details/${staff.id}`}>
                                                 <div className="Player__Text-xex65m-4 jydKUq">
                                                     {/* <p className="Player__Number-xex65m-6 hKItNN">88</p> */}
                                                     <h3 className="Player__NoMarginH3-xex65m-5 Player__LastName-xex65m-8 eJMLuC">{staff.firstname +" "+staff.lastname}</h3>
