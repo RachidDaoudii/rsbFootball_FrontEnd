@@ -14,18 +14,24 @@ export const clubApi = ApiSliceClub.injectEndpoints({
         method: "GET",
       }),
     }),
-    // addComment: builder.mutation({
-    //   query: (body) => ({
-    //     url: "comment",
-    //     method: "POST",
-    //     body
-    //   }),
-    // }),
+    player: builder.query({
+      query: (id) => ({
+        url: `/players/${id}`,
+        method: "GET",
+      }),
+    }),
+    staff: builder.query({
+      query: (id) => ({
+        url: `/staffs/${id}`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
 export const {
   useCategoriesQuery,
   useCategoryQuery,
-  // useAddCommentMutation,
+  usePlayerQuery,
+  useStaffQuery
 } = clubApi;
