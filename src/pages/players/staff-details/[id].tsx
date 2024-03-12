@@ -7,15 +7,18 @@ import Footer from "@/components/footer";
 import RadarChart from "@/components/charts/radar";
 import { useRouter } from 'next/router';
 import {useServiceStaff} from "@/pages/api/club/players/servicePlayer"
+import {useServiceCategory} from "@/pages/api/club/categories/serviceCategory"
+
 import Spinner from "@/components/spinner";
 import { motion } from 'framer-motion';
-
+import PlayerStaff from "@/components/players"
 const Player = () => {
   const { 
     setStaffId,
         dataStaff,
         isLoadingStaff
     } = useServiceStaff()
+    const {refetchCategory,dataCategory,setCategoryId,isLoadingCategory}=useServiceCategory()
   const router = useRouter();
   const { id } =  router.query;
 
@@ -23,12 +26,16 @@ const Player = () => {
     if(id){
       setStaffId(id)
     }
+    if(dataStaff?.category?.id){
+      setCategoryId(dataStaff?.category?.id)
+    }
     
-},[id,dataStaff])
+},[id,dataStaff,dataStaff?.category?.id])
 
   if(isLoadingStaff){
     return <Spinner/> 
   } 
+
 
   return (
     <>
@@ -48,6 +55,7 @@ const Player = () => {
                 data-player-number="8"
               >
                 <motion.div
+                key={dataStaff?.role}
                   variants={{
                     hidden: {
                       opacity: 0,
@@ -66,6 +74,7 @@ const Player = () => {
                     {dataStaff?.role}
                 </motion.div>
                 <motion.div
+                key={dataStaff?.lastname +" "+ dataStaff?.firstname}
                   variants={{
                     hidden: {
                       opacity: 0,
@@ -88,6 +97,7 @@ const Player = () => {
                 </div>
               </div>
               <motion.div
+              key={dataStaff?.image}
                 variants={{
                   hidden: {
                     opacity: 0,
@@ -209,6 +219,8 @@ const Player = () => {
         </div>
       </div>
     </div>
+
+    <PlayerStaff data={dataCategory?.staff} type={"staff"}/>
     <div>
       <Footer/>
     </div>

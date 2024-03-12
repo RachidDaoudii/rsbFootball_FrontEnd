@@ -7,9 +7,10 @@ import Footer from "@/components/footer";
 import RadarChart from "@/components/charts/radar";
 import { useRouter } from 'next/router';
 import {useServicePlayer} from "@/pages/api/club/players/servicePlayer"
+import {useServiceCategory} from "@/pages/api/club/categories/serviceCategory"
 import Spinner from "@/components/spinner";
 import { motion } from 'framer-motion';
-
+import PlayerStaff from "@/components/players"
 
 const Player = () => {
   const { 
@@ -17,6 +18,7 @@ const Player = () => {
     dataPlayer,
     isLoadingPlayer,
     } = useServicePlayer()
+    const {refetchCategory,dataCategory,setCategoryId,isLoadingCategory}=useServiceCategory()
   const router = useRouter();
   const { id } =  router.query;
 
@@ -24,8 +26,12 @@ const Player = () => {
     if(id){
       setPlayerId(id)
     }
+
+    if(dataPlayer?.category?.id){
+      setCategoryId(dataPlayer?.category?.id)
+    }
     
-},[id,dataPlayer])
+},[id,dataPlayer,dataPlayer?.category?.id])
 
 if(isLoadingPlayer){
   return <Spinner/> 
@@ -48,6 +54,7 @@ if(isLoadingPlayer){
                 data-player-number="8"
               >
                 <motion.div
+                key={dataPlayer?.position}
                   variants={{
                     hidden: {
                       opacity: 0,
@@ -59,13 +66,16 @@ if(isLoadingPlayer){
                       y: 0,
                     },
                   }}
+                  
                   initial="hidden"
                   whileInView="visible"
-                  transition={{ duration: 1, delay: 0.1 }}
+                  transition={{ duration: 2, delay: 0.1 }}
                   viewport={{ once: true }} id="place" className="place">
                   {dataPlayer?.position}
+                  
                 </motion.div>
                 <motion.div
+                  key={dataPlayer?.lastname +" "+ dataPlayer?.firstname}
                   variants={{
                     hidden: {
                       opacity: 0,
@@ -80,10 +90,11 @@ if(isLoadingPlayer){
                   initial="hidden"
                   whileInView="visible"
                   transition={{ duration: 2, delay: 0.1 }}
-                  viewport={{ once: true }} id="name_player" className=" name_player">
+                  viewport={{ once: true }} id="name_player" className="name_player">
                   {dataPlayer?.lastname +" "+ dataPlayer?.firstname}
                 </motion.div>
                 <motion.div
+                  key={dataPlayer?.number}
                   variants={{
                     hidden: {
                       opacity: 0,
@@ -103,6 +114,7 @@ if(isLoadingPlayer){
                 </motion.div>
               </div>
               <motion.div
+                key={dataPlayer?.image}
                 variants={{
                   hidden: {
                     opacity: 0,
@@ -120,7 +132,7 @@ if(isLoadingPlayer){
                 viewport={{ once: true }} className="photo_player">
                 <img id="photo_player" className="" src={dataPlayer?.image} alt="" />
                 <div>
-                <RadarChart/>
+                {/* <RadarChart/> */}
               </div>
               </motion.div>
              
@@ -223,6 +235,8 @@ if(isLoadingPlayer){
         </div>
       </div>
     </div>
+
+    <PlayerStaff data={dataCategory?.player} type={"player"}/>
  
     <div>
       <Footer/>
