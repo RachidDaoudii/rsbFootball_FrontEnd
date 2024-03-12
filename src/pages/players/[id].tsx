@@ -46,12 +46,12 @@ return(
                             <h2 className="PlayersCategory__PlayerType-sc-1eltik-2 title">{p}</h2>
                             <ul className="PlayersCategory__Items-sc-1eltik-1 buZoZa">
                                 {dataCategory?.player.map((player) => {
-                                    if(p === player.position[0]){
+                                    if(p === player.position){
                                         return (<li className="Player__Container-xex65m-0 bCPMQZ">
                                         <Link className="Player__ContainerLink-xex65m-1 klZRej" href={`player-details/${player.id}`}>
-                                            <div className="Player__Text-xex65m-4 jydKUq">
+                                            <div className="Player__Text-xex65m-4 jydKUq absolute z-0">
                                                 <p className="Player__Number-xex65m-6 hKItNN">{player.number}</p>
-                                                <h3 className="Player__NoMarginH3-xex65m-5 Player__LastName-xex65m-8 eJMLuC">{
+                                                <h3 className="Player__NoMarginH3-xex65m-5 Player__LastName-xex65m-8 font-bold">{
                                                     player.lastname + " "+ player?.firstname
                                                 }</h3>
                                             </div>
@@ -76,8 +76,8 @@ return(
                                         <li className="Player__Container-xex65m-0 bCPMQZ">
                                             <Link className="Player__ContainerLink-xex65m-1 klZRej" href={`staff-details/${staff.id}`}>
                                                 <div className="Player__Text-xex65m-4 jydKUq">
-                                                    {/* <p className="Player__Number-xex65m-6 hKItNN">88</p> */}
-                                                    <h3 className="Player__NoMarginH3-xex65m-5 Player__LastName-xex65m-8 eJMLuC">{staff.firstname +" "+staff.lastname}</h3>
+                                                    <h3 className="Player__NoMarginH3-xex65m-5 Player__LastName-xex65m-8 font-bold mt-8">{staff.firstname +" "+staff.lastname}</h3>
+                                                    <p className="">{staff.role}</p>
                                                 </div>
                                                 <div className="Player__Photo-xex65m-2 zZfmu">
                                                     <img src={staff.image} alt="" />

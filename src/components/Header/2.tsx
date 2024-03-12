@@ -125,7 +125,7 @@ export default function Home() {
                       </svg>
                     </button>
 
-                    <div className="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 md:w-[705px] lg:w-[750px] hidden z-10 top-full end-0 overflow-hidden bg-gray-700 md:shadow-2xl rounded-lg dark:bg-gray-800 dark:divide-gray-700 before:absolute before:-top-5 before:start-0 before:w-full before:h-5">
+                    <div className="absolute z-20 hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 md:w-[705px] lg:w-[750px] hidden z-10 top-full end-0 overflow-hidden bg-gray-700 md:shadow-2xl rounded-lg dark:bg-gray-800 dark:divide-gray-700 before:absolute before:-top-5 before:start-0 before:w-full before:h-5">
                       <div className="grid grid-cols-2 md:grid-cols-10">
                         <div className="md:col-span-3">
                           <div className="flex flex-col py-6 px-3 md:px-6">
@@ -468,7 +468,7 @@ export default function Home() {
 
                   <Link
                     className="font-medium text-white hover:text-gray-600 py-3 md:py-6 dark:text-gray-200 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    href={'marketplace'}
+                    href={'/marketplace'}
                   >
                     Marketplace <i className="fa-solid fa-shop"></i>
                   </Link>
@@ -503,7 +503,7 @@ export default function Home() {
       <Drawer open={open} onClose={closeDrawer} className="p-4" placement="right" placeholder={null}>
         <div className="mb-6 flex items-center justify-between">
           <Typography variant="h5" color="blue-gray" placeholder={null}>
-            Material Tailwind
+            Items (3)
           </Typography>
           <IconButton variant="text" color="blue-gray" onClick={closeDrawer} placeholder={null}>
             <svg
@@ -559,7 +559,7 @@ export default function Home() {
               </button>
             </div>
             <p className="text-xs+ text-slate-400 dark:text-navy-300">
-              Lorem ipsum dolor sit.
+              Product 1
             </p>
           </div>
         </div>
@@ -600,7 +600,7 @@ export default function Home() {
               </button>
             </div>
             <p className="text-xs+ text-slate-400 dark:text-navy-300">
-              Amet consectetur adip.
+            Product 2
             </p>
           </div>
         </div>
@@ -642,9 +642,10 @@ export default function Home() {
                 </svg>
               </button>
             </div>
-            <p className="text-xs+ text-slate-400 dark:text-navy-300">
-              Amet consectetur adip.
-            </p>
+            <div className="flex justify-center">
+              <button className="border border-2 rounded p-1 mx-4">+</button>
+              <button className="border border-2 rounded p-1">+</button>
+            </div>
           </div>
         </div>
         <p className="font-inter font-semibold">$18.00</p>
