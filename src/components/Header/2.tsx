@@ -13,12 +13,29 @@ import {
   Typography,
   IconButton,
 } from "@material-tailwind/react";
+import { useSelector, useDispatch } from 'react-redux';
+import {increment, decrement,clear} from '@/redux/features/cart/cartSlice';
+
 export default function Home() {
+  const dispatch = useDispatch();
+  const cart = useSelector((state: any) => state?.cart?.shoppingCart);
   const router = useRouter();
   const {route} = router
   const [open, setOpen] = React.useState(false);
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
+
+  const handleIncrement = (id: number) => {
+    dispatch(increment(id));
+  };
+
+  const handleDncrement = (id: number) => {
+    dispatch(decrement(id));
+  };
+
+  const handleClear = (id: number)=>{
+    dispatch(clear(id))
+  }
   return (
     <>
       <div className={`flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm py-3 md:py-0 nav border-gray-200 dark:border-gray-600 dark:bg-gray-900 ${route === '/'? "":"bg-gray-800"}`}>
@@ -500,10 +517,10 @@ export default function Home() {
       </div>
       <React.Fragment>
       {/* <Button onClick={openDrawer}>Open Drawer</Button> */}
-      <Drawer open={open} onClose={closeDrawer} className="p-4" placement="right" placeholder={null}>
+      <Drawer open={open} onClose={closeDrawer} className="p-4 bg-gray-100" placement="right" placeholder={null}>
         <div className="mb-6 flex items-center justify-between">
           <Typography variant="h5" color="blue-gray" placeholder={null}>
-            Items (3)
+            Items ({cart.length})
           </Typography>
           <IconButton variant="text" color="blue-gray" onClick={closeDrawer} placeholder={null}>
             <svg
@@ -522,26 +539,67 @@ export default function Home() {
             </svg>
           </IconButton>
         </div>
-        <div className="card mt-5 p-4 sm:p-5">
-    <div className="flex flex-col space-y-3.5">
-      <div className="group flex items-center justify-between space-x-3">
-        <div className="flex items-center space-x-4">
-          <div className="relative flex">
-            <img
-              src="https://rsb-football1.s3.amazonaws.com/Bola_de_futebol_3d_isolada_no_branco_com_tra%C3%A7ado_de_recorte___Foto_Premium-removebg-preview.png"
-              className="mask is-star h-11 w-11 origin-center object-cover"
-              alt="image"
-            />
-            <div className="absolute top-0 right-0 -m-1 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full border border-gray-300 bg-gray-300 px-1 text-tiny+ font-medium leading-none text-slate-800 dark:border-navy-700 dark:bg-navy-450 dark:text-white">
-              2
-            </div>
-          </div>
-          <div>
-            <div className="flex items-center space-x-1">
-              <p className="font-medium text-slate-700 line-clamp-1 dark:text-navy-100">
-                Roast beef
-              </p>
-              <button className="btn h-6 w-6 rounded-full p-0 opacity-0 hover:bg-slate-300/20 focus:bg-slate-300/20 focus:opacity-100 active:bg-slate-300/25 group-hover:opacity-100 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
+        <div className="card mt-5 p-2" >
+          <div className="flex flex-col space-y-3.5 bg-gray-200 rounded-md p-1"  style={{ overflowY: 'auto', maxHeight: '320px' }}>
+            {
+              cart.length >= 1 ? (cart.length >= 1 && cart.map((item,i)=>{
+                return(
+                  <div className="group flex items-center justify-between space-x-3 border border-orange-200 p-2 rounded-md">
+              <div className="flex items-center space-x-4">
+                <div className="relative flex">
+                  <img
+                    src={item?.image}
+                    className="mask is-star h-11 rounded-md bg-transparent"
+                    alt="image"
+                  />
+                  <div className="absolute top-0 right-0 -m-1 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full border border-gray-300 bg-gray-300 px-1 text-tiny+ font-medium leading-none text-slate-800 dark:border-navy-700 dark:bg-navy-450 dark:text-white">
+                    {item?.qnt}
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between items-center space-x-1">
+                    <p className="font-medium text-slate-700 line-clamp-1 dark:text-navy-100">
+                      {item?.name}
+                    </p>
+                  </div>
+                  <div className="flex justify-center">
+                  <button className="bg-gray-200 rounded-full p-2 mr-2 hover:bg-orange-300 focus:outline-none"
+                  onClick={() => handleIncrement(item.id)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-3.5 w-3.5 text-gray-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 3a1 1 0 00-1 1v5H4a1 1 0 100 2h5v5a1 1 0 102 0v-5h5a1 1 0 100-2h-5V4a1 1 0 00-1-1z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <button className="bg-gray-200 rounded-full p-2 hover:bg-orange-300 focus:outline-none"
+                  onClick={() => handleDncrement(item.id)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-3.5 w-3.5 text-gray-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M15 10a1 1 0 010 2H5a1 1 0 010-2h10z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                </div>
+              </div>
+              <div cassName="flex">
+              <button onClick={() => handleClear(item.id)} className=" ms-6 bg-gray-200 rounded-full p-0.5 hover:bg-gray-300 focus:bg-gray-300 focus:outline-none">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-3.5 w-3.5"
@@ -553,109 +611,25 @@ export default function Home() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                    d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
               </button>
+              <p className="font-inter font-semibold">${item?.price}</p>
+              </div>
             </div>
-            <p className="text-xs+ text-slate-400 dark:text-navy-300">
-              Product 1
-            </p>
+                )
+              })) : (<div className="text-orange-600 mx-8">Not Found Products</div>)
+              
+            }
+              
+            {/* end */}
           </div>
-        </div>
-        <p className="font-inter font-semibold">$12.00</p>
-      </div>
-      <div className="group flex items-center justify-between space-x-3">
-        <div className="flex items-center space-x-4">
-          <div className="relative flex">
-            <img
-              src="https://rsb-football1.s3.amazonaws.com/Bola_de_futebol_3d_isolada_no_branco_com_tra%C3%A7ado_de_recorte___Foto_Premium-removebg-preview.png"
-              className="mask is-star h-11 w-11 origin-center object-cover"
-              alt="image"
-            />
-            <div className="absolute top-0 right-0 -m-1 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full border border-gray-300 bg-gray-300 px-1 text-tiny+ font-medium leading-none text-slate-800 dark:border-navy-700 dark:bg-navy-450 dark:text-white">
-              1
-            </div>
-          </div>
-          <div>
-            <div className="flex items-center space-x-1">
-              <p className="font-medium text-slate-700 line-clamp-1 dark:text-navy-100">
-                Tuna salad
-              </p>
-              <button className="btn h-6 w-6 rounded-full p-0 opacity-0 hover:bg-slate-300/20 focus:bg-slate-300/20 focus:opacity-100 active:bg-slate-300/25 group-hover:opacity-100 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-3.5 w-3.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <p className="text-xs+ text-slate-400 dark:text-navy-300">
-            Product 2
-            </p>
-          </div>
-        </div>
-        <p className="font-inter font-semibold">$14.00</p>
-      </div>
-      
-      
-      <div className="group flex items-center justify-between space-x-3">
-        <div className="flex items-center space-x-4">
-          <div className="relative flex">
-            <img
-              src="https://rsb-football1.s3.amazonaws.com/Bola_de_futebol_3d_isolada_no_branco_com_tra%C3%A7ado_de_recorte___Foto_Premium-removebg-preview.png"
-              className="mask is-star h-11 w-11 origin-center object-cover"
-              alt="image"
-            />
-            <div className="absolute top-0 right-0 -m-1 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full border border-gray-300 bg-gray-300 px-1 text-tiny+ font-medium leading-none text-slate-800 dark:border-navy-700 dark:bg-navy-450 dark:text-white">
-              2
-            </div>
-          </div>
-          <div>
-            <div className="flex items-center space-x-1">
-              <p className="font-medium text-slate-700 line-clamp-1 dark:text-navy-100">
-                Duck carpaccio
-              </p>
-              <button className="btn h-6 w-6 rounded-full p-0 opacity-0 hover:bg-slate-300/20 focus:bg-slate-300/20 focus:opacity-100 active:bg-slate-300/25 group-hover:opacity-100 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-3.5 w-3.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="flex justify-center">
-              <button className="border border-2 rounded p-1 mx-4">+</button>
-              <button className="border border-2 rounded p-1">+</button>
-            </div>
-          </div>
-        </div>
-        <p className="font-inter font-semibold">$18.00</p>
-      </div>
-    </div>
     <div className="my-4 h-px bg-slate-200 dark:bg-navy-500" />
     <div className="space-y-2 font-inter">
       <div className="flex justify-between text-slate-600 dark:text-navy-100">
         <p>Subtotal</p>
-        <p className="font-medium tracking-wide">55.00$</p>
+        <p className="font-medium tracking-wide">30.00$</p>
       </div>
       <div className="flex justify-between text-xs+">
         <p>Tax</p>
@@ -663,7 +637,11 @@ export default function Home() {
       </div>
       <div className="flex justify-between text-base font-medium text-primary dark:text-accent-light">
         <p>Total</p>
-        <p>60.00$</p>
+        <p>{cart.reduce((total:number, product:any) => {
+            return total + (product.price * product.qnt);
+          }, 0+ 30.00 + 5.00)
+          .toFixed(2) 
+          }</p>
       </div>
     </div>
     <div className="mt-5 grid grid-cols-3 gap-4 text-center">
@@ -725,10 +703,17 @@ export default function Home() {
         </span>
       </button>
     </div>
-    <button className="btn mt-5 h-11 justify-between bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
+    <div className="flex justify-center ">
+    <button className="rounded-lg p-2 mt-5 bg-orange-600 font-medium text-white hover:bg-orange-focus focus:bg-orange-focus active:bg-orange-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
       <span>Checkout</span>
-      <span>$88.00</span>
+      <span className="ms-2">${cart.reduce((total:number, product:any) => {
+            return total + (product.price * product.qnt);
+          }, 0+ 30.00 + 5.00)
+          .toFixed(2) 
+          }</span>
     </button>
+    </div>
+    
   </div>
       </Drawer>
     </React.Fragment>

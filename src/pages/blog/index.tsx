@@ -32,7 +32,7 @@ const [blogs,setBlogs] = useState([])
       {/* two */}
     
     
-      {isLoading ? <Spinner/> : blogs && blogs.map((blog,i)=>{
+      {isLoading ? <Spinner/> : blogs && blogs.map((blog:any,i)=>{
         if(i<=1){
           return (
           <div className="group cursor-pointer">

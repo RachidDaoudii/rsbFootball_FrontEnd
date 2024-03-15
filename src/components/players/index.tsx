@@ -24,7 +24,7 @@ const PlayerStaff = ({ data, type }: { data: any[], type: string })=>{
                                 }
                             </div>
                             <div className="Player__Photo-xex65m-2 zZfmu">
-                                <img src={item?.image} />
+                                <img src={item?.image} loading="lazy" alt={item.lastname} />
                             </div>
                             <div className="Player__Gradient-xex65m-3 bJKdaX"></div>
                         </Link>

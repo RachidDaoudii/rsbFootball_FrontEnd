@@ -26,6 +26,12 @@ export const clubApi = ApiSliceClub.injectEndpoints({
         method: "GET",
       }),
     }),
+    products: builder.query({
+      query: () => ({
+        url: `/products`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
@@ -33,5 +39,6 @@ export const {
   useCategoriesQuery,
   useCategoryQuery,
   usePlayerQuery,
-  useStaffQuery
+  useStaffQuery,
+  useProductsQuery
 } = clubApi;
