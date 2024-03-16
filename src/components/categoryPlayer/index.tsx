@@ -1,7 +1,7 @@
 import img from "@/styles/images/category/category.jpg";
 import Image from "next/image";
 import Link from "next/link";
-import { categoriesPlayer } from "@/types/blog";
+import { categoriesPlayer } from "@/types";
 
 const CategoryPlayer = ({categories}:{categories:categoriesPlayer})=>{
     return (<Link className="group relative block rounded-xl dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href={`/players/${categories.id}`}>

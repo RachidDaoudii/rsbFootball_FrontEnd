@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import {addOrderInCart} from '@/redux/features/cart/cartSlice';
 import { useDispatch } from 'react-redux';
 import Image from "next/image";
+import { Product } from "@/types";
+import Spinner from "@/components/spinner";
+
 const SectionProducts = ()=>{
   const dispatch = useDispatch();
   const { data, error, isLoading, refetch ,isSuccess } = useProductsQuery("");
@@ -16,9 +19,9 @@ const SectionProducts = ()=>{
     </h2>
     <div className="scrollbar-sm mt-4 flex space-x-4 overflow-x-auto px-4 pb-4 sm:px-5">
     {
-      isLoading ? 'Loading...': null
+      isLoading ? <Spinner/>: null
     }
-      {data && data.map((product,i)=>(
+      {data && data.map((product:Product,i:number)=>(
         <div className="flex w-72 shrink-0 flex-col">
         <a href=''>
         <Image

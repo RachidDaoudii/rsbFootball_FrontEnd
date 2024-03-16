@@ -9,6 +9,8 @@ import Comment from "@/components/comment"
 import { toast } from "react-toastify";
 import { useComment } from "@/pages/api/blog/serviceBlog";
 import Spinner from "@/components/spinner";
+import { Blog } from "@/types";
+import { comment } from "@/types";
 
 
 const SingleBlogPage =  () => {
@@ -17,7 +19,7 @@ const SingleBlogPage =  () => {
    const { data, error, isLoading, refetch ,isSuccess } = useGetOnePostQuery(id);
    const {comment,handleChangeComment , handleSubmitComment ,errorComment,isErrorComment ,isSuccessComment}= useComment()
  
-   const [blog,setBlog] = useState({})
+   const [blog,setBlog] = useState<Blog>()
 
    useEffect(() => {
     const fetchData = async () => {
@@ -49,10 +51,11 @@ const SingleBlogPage =  () => {
     fetchData(); 
   
   }, [id,isLoading,isSuccess, isErrorComment, errorComment, isSuccessComment]);
+  
   if(isLoading){
     return(<Spinner/>)
   }
-
+  
 
   return (
     <>
@@ -65,9 +68,11 @@ const SingleBlogPage =  () => {
          <div className="flex justify-center">
             <div className="flex gap-3">
                <a href="/category/technology">
-               <span className="inline-block text-xs font-medium tracking-wider uppercase   mt-5 text-blue-600">
-               {blog?.categories?.name}
-               </span>
+               {blog && blog.categories &&  (
+                  <span className="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-blue-600">
+                    {blog.categories.name}
+                  </span>
+                )}
                </a>
             </div>
          </div>
@@ -240,8 +245,8 @@ const SingleBlogPage =  () => {
 
 <div className="mx-auto max-w-screen-md">
 <ol className="comment-list mt-5">
-         { blog.comments && blog.comments.length > 0 ?(
-            blog.comments.map((comment :object,i:number)=>(<Comment comment={comment}/>))
+         { blog?.comments && blog.comments.length > 0 ?(
+            blog.comments.map((comment :comment,i:number)=>(<Comment key={i} comment={comment}/>))
          ):(null)}
   </ol>
 </div>

@@ -15,6 +15,7 @@ import {
 } from "@material-tailwind/react";
 import { useSelector, useDispatch } from 'react-redux';
 import {increment, decrement,clear} from '@/redux/features/cart/cartSlice';
+import { Product } from "@/types";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -72,9 +73,9 @@ export default function Home() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <line x1="3" x2="21" y1="6" y2="6" />
                     <line x1="3" x2="21" y1="12" y2="12" />
@@ -88,9 +89,9 @@ export default function Home() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path d="M18 6 6 18" />
                     <path d="m6 6 12 12" />
@@ -134,15 +135,15 @@ export default function Home() {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                     </button>
 
-                    <div className="absolute z-20 hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 md:w-[705px] lg:w-[750px] hidden z-10 top-full end-0 overflow-hidden bg-gray-700 md:shadow-2xl rounded-lg dark:bg-gray-800 dark:divide-gray-700 before:absolute before:-top-5 before:start-0 before:w-full before:h-5">
+                    <div className="absolute z-20 hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 md:w-[705px] lg:w-[750px] hidden top-full end-0 overflow-hidden bg-gray-700 md:shadow-2xl rounded-lg dark:bg-gray-800 dark:divide-gray-700 before:absolute before:-top-5 before:start-0 before:w-full before:h-5">
                       <div className="grid grid-cols-2 md:grid-cols-10">
                         <div className="md:col-span-3">
                           <div className="flex flex-col py-6 px-3 md:px-6">
@@ -163,9 +164,9 @@ export default function Home() {
                                   viewBox="0 0 24 24"
                                   fill="none"
                                   stroke="currentColor"
-                                  stroke-width="2"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                 >
                                   <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
                                   <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
@@ -187,9 +188,9 @@ export default function Home() {
                                   viewBox="0 0 24 24"
                                   fill="none"
                                   stroke="currentColor"
-                                  stroke-width="2"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                 >
                                   <rect
                                     width="7"
@@ -217,9 +218,9 @@ export default function Home() {
                                   viewBox="0 0 24 24"
                                   fill="none"
                                   stroke="currentColor"
-                                  stroke-width="2"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                 >
                                   <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
                                   <polyline points="14 2 14 8 20 8" />
@@ -244,9 +245,9 @@ export default function Home() {
                                   viewBox="0 0 24 24"
                                   fill="none"
                                   stroke="currentColor"
-                                  stroke-width="2"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                 >
                                   <path d="m7 11 2-2-2-2" />
                                   <path d="M11 13h4" />
@@ -276,9 +277,9 @@ export default function Home() {
                                   viewBox="0 0 24 24"
                                   fill="none"
                                   stroke="currentColor"
-                                  stroke-width="2"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                 >
                                   <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                                 </svg>
@@ -309,9 +310,9 @@ export default function Home() {
                                   viewBox="0 0 24 24"
                                   fill="none"
                                   stroke="currentColor"
-                                  stroke-width="2"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                 >
                                   <circle cx="12" cy="12" r="10" />
                                   <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
@@ -334,9 +335,9 @@ export default function Home() {
                                   viewBox="0 0 24 24"
                                   fill="none"
                                   stroke="currentColor"
-                                  stroke-width="2"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                 >
                                   <circle cx="12" cy="12" r="4" />
                                   <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" />
@@ -358,9 +359,9 @@ export default function Home() {
                                   viewBox="0 0 24 24"
                                   fill="none"
                                   stroke="currentColor"
-                                  stroke-width="2"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                 >
                                   <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                                   <circle cx="9" cy="7" r="4" />
@@ -390,9 +391,9 @@ export default function Home() {
                                   viewBox="0 0 24 24"
                                   fill="none"
                                   stroke="currentColor"
-                                  stroke-width="2"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                 >
                                   <path d="M4 7V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2h-6" />
                                   <polyline points="14 2 14 8 20 8" />
@@ -416,9 +417,9 @@ export default function Home() {
                                   viewBox="0 0 24 24"
                                   fill="none"
                                   stroke="currentColor"
-                                  stroke-width="2"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                 >
                                   <path d="m15 5 4 4" />
                                   <path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13" />
@@ -468,9 +469,9 @@ export default function Home() {
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                   >
                                     <path d="m9 18 6-6-6-6" />
                                   </svg>
@@ -503,7 +504,7 @@ export default function Home() {
                     contact
                   </a>
                   <a className="flex items-center gap-x-2 font-semibold text-white hover:text-orange-600 sm:border-s sm:border-gray-300 sm:my-6 sm:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-orange-500" href="#">
-                    <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     Log in
                   </a>
                   <button className="text-white" onClick={()=>setOpen(true) }>
@@ -542,7 +543,7 @@ export default function Home() {
         <div className="card mt-5 p-2" >
           <div className="flex flex-col space-y-3.5 bg-gray-200 rounded-md p-1"  style={{ overflowY: 'auto', maxHeight: '320px' }}>
             {
-              cart.length >= 1 ? (cart.length >= 1 && cart.map((item,i)=>{
+              cart.length >= 1 ? (cart.length >= 1 && cart.map((item:Product,i:number)=>{
                 return(
                   <div className="group flex items-center justify-between space-x-3 border border-orange-200 p-2 rounded-md">
               <div className="flex items-center space-x-4">
@@ -598,7 +599,7 @@ export default function Home() {
                 </div>
                 </div>
               </div>
-              <div cassName="flex">
+              <div className="flex">
               <button onClick={() => handleClear(item.id)} className=" ms-6 bg-gray-200 rounded-full p-0.5 hover:bg-gray-300 focus:bg-gray-300 focus:outline-none">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

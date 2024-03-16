@@ -1,5 +1,5 @@
 import {formatDate} from "@/components/dateTime/formatDate";
-import { comment } from "@/types/blog";
+import { comment } from "@/types";
 
 const Comment = ({comment}:{comment:comment})=>{
     return(<li className="comment even thread-even depth-1 mb-4" id="comment-515">

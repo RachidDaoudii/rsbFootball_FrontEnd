@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { cartEntity } from './entity.cart';
 // import { RootState } from '../../store';
+import { CartShopping,Product } from "@/types";
 
-const initialState=  {
+const initialState :CartShopping<Product> =  {
   shoppingCart: [],
 };
 
@@ -11,12 +11,14 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addOrderInCart: (state, action) => {
-      let data = {
+      let data: Product = {
         id: action.payload.id,
         name: action.payload.name,
         image: action.payload.image,
         price: action.payload.price,
         qnt: 1,
+        description: action.payload.description,
+        Category: action.payload.Category,
       };
 
       let index = state.shoppingCart.findIndex((item) => item.id === data.id);

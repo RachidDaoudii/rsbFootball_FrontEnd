@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import Image from "next/image";
 import Link from "next/link";
 import Spinner from "@/components/spinner";
+import { Product } from "@/types";
 
 const Marketplace = () =>{
   const dispatch = useDispatch();
@@ -121,7 +122,7 @@ const Marketplace = () =>{
           </div>
         </section>
           <div className="mt-10 grid lg:grid-cols-3 gap-x-8 gap-y-8 items-center">
-          {data && data.slice(0, 40).sort(() => Math.random() - 0.5).map((product:any,i:any)=>(
+          {data && data.slice(0, 40).sort(() => Math.random() - 0.5).map((product:Product,i:number)=>(
             <div className="group rounded-xl group-hover:bg-opacity-85 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
             <img
               className="group-hover:opacity-85 transition duration-500 object-cover object-center h-[130px]"

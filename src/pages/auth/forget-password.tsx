@@ -2,12 +2,12 @@
 import Image from "next/image";
 import image from "../../styles/images/logo.png";
 import Link from "next/link";
-import { useForgetPassword } from "@/@api/auth";
+// import { useForgetPassword } from "@/@api/auth";
 
 export default function forgetPassword() {
 
-  const useforgetpassword = useForgetPassword()
-  const {handleInputChange,handleSubmit} = useforgetpassword;
+  // const useforgetpassword = useForgetPassword()
+  // const {handleInputChange,handleSubmit} = useforgetpassword;
   return (
     <div>
       <div className="grid w-full grow grid-cols-1 place-items-center">
@@ -33,7 +33,7 @@ export default function forgetPassword() {
                   type="text"
                   name="email"
                   // value={statelogin.email}
-                  onChange={handleInputChange}
+                  // onChange={handleInputChange}
                 />
                 <span className="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                   <svg
@@ -55,8 +55,8 @@ export default function forgetPassword() {
             </label>
 
             <button
-              onClick={handleSubmit}
-              className="btn mt-5 w-full bg-primary font-medium text-white bg-violet-600 hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90 rounded-lg p-2"
+              // onClick={handleSubmit}
+              className="btn mt-5 w-full bg-orange-600 font-medium text-white bg-violet-600 hover:bg-orange-focus focus:bg-orange-focus active:bg-orange-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90 rounded-lg p-2"
             >
               Send Email
             </button>
@@ -65,7 +65,7 @@ export default function forgetPassword() {
                 <span>Dont have Account?</span>
                 <Link
                   href="signup"
-                  className="text-primary p-2 transition-colors hover:text-primary-focus dark:text-accent-light dark:hover:text-accent text-violet-600"
+                  className="text-orange-600 p-2 transition-colors hover:text-orange-focus dark:text-accent-light dark:hover:text-accent text-violet-600"
                 >
                   Create account
                 </Link>

@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import Link from "next/link";
 import Spinner from "@/components/spinner";
+import { Player,Staff } from "@/types";
 
 const Players = () =>{
     const router = useRouter();
@@ -31,6 +32,8 @@ const Players = () =>{
         return (<Spinner/>)
     }
 
+
+
 return(
     <>
     <Header/>
@@ -45,7 +48,7 @@ return(
                                 <div className="PlayersCategory__Container-sc-1eltik-0 gjiLmw">
                             <h2 className="PlayersCategory__PlayerType-sc-1eltik-2 title">{p}</h2>
                             <ul className="PlayersCategory__Items-sc-1eltik-1 buZoZa">
-                                {dataCategory?.player.map((player) => {
+                                {dataCategory?.player.map((player:Player) => {
                                     if(p === player.position){
                                         return (<li className="Player__Container-xex65m-0 bCPMQZ">
                                         <Link className="Player__ContainerLink-xex65m-1 klZRej" href={`player-details/${player.id}`}>
@@ -72,7 +75,7 @@ return(
                             <h2 className="PlayersCategory__PlayerType-sc-1eltik-2 title">Staff</h2>
                             <ul className="PlayersCategory__Items-sc-1eltik-1 buZoZa">
                                 {
-                                    dataCategory?.staff.map((staff:object) => (
+                                    dataCategory?.staff.map((staff:Staff) => (
                                         <li className="Player__Container-xex65m-0 bCPMQZ">
                                             <Link className="Player__ContainerLink-xex65m-1 klZRej" href={`staff-details/${staff.id}`}>
                                                 <div className="Player__Text-xex65m-4 jydKUq">
