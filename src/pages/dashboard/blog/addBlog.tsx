@@ -7,9 +7,9 @@ import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@m
   UploadButton,
   UploadDropzone,
 } from "@/components/utils/uploadthing/uploadthing";
-import {useCreatPost} from "@/@api/blog/post"
+// import {useCreatPost} from "@/@api/blog/post"
 const AddBlog = ()=>{
-  const {handleSubmit, handleInputChange,post} = useCreatPost()
+  // const {handleSubmit, handleInputChange,post} = useCreatPost()
 
 
 
@@ -20,17 +20,17 @@ const AddBlog = ()=>{
             <ol className="flex items-center whitespace-nowrap p-2 border-y border-gray-200 dark:border-gray-700" aria-label="Breadcrumb">
               <li className="inline-flex items-center">
                 <a className="flex items-center text-sm text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:focus:text-blue-500" href="#">
-                  <svg className="flex-shrink-0 me-3 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                  <svg className="flex-shrink-0 me-3 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" ><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                   Dashbord
                 </a>
-                <svg className="flex-shrink-0 mx-2 overflow-visible size-4 text-gray-400 dark:text-neutral-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                <svg className="flex-shrink-0 mx-2 overflow-visible size-4 text-gray-400 dark:text-neutral-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </li>
               <li className="inline-flex items-center">
                 <a className="flex items-center text-sm text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:focus:text-blue-500" href="#">
-                  <svg className="flex-shrink-0 me-3 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/></svg>
+                  <svg className="flex-shrink-0 me-3 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/></svg>
                   Blog
                 </a>
-                <svg className="flex-shrink-0 mx-2 overflow-visible size-4 text-gray-400 dark:text-neutral-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                <svg className="flex-shrink-0 mx-2 overflow-visible size-4 text-gray-400 dark:text-neutral-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
 
               </li>
               <li className="inline-flex items-center">
@@ -54,7 +54,7 @@ const AddBlog = ()=>{
         </div>
         <div>
         <button
-        onClick={handleSubmit}
+        // onClick={handleSubmit}
               className="btn w-full  font-medium text-white bg-orange-500 px-6 hover:bg-orange-700 focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90 rounded-lg p-2"
             >
              Add
@@ -66,7 +66,7 @@ const AddBlog = ()=>{
           endpoint="imageUploader"
           className="mt-4 ut-button:bg-red-500 ut-button:ut-readying:bg-red-500/50"
           onClientUploadComplete={(res) => {
-            post.image = res[0].url;
+            // post.image = res[0].url;
             
           }}
           onUploadError={(error: Error) => {
@@ -88,7 +88,7 @@ const AddBlog = ()=>{
                   placeholder="Enter Title"
                   type="text"
                   name="title"
-                  onChange={handleInputChange}
+                  // onChange={handleInputChange}
                 />
               </span>
             </label></div>
@@ -113,7 +113,7 @@ const AddBlog = ()=>{
               <textarea
                 className="form-input peer w-full h-[150px] rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:z-10 hover:border-red-600  focus:z-5 focus:outline-none"
                 name="content"
-                onChange={handleInputChange}
+                // onChange={handleInputChange}
               ></textarea>
             </span>
         </label>

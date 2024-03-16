@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import {formatDate} from "@/components/dateTime/formatDate";
-import { Blog } from "@/types/blog";
+import { Blog } from "@/types";
 const CardItem = ({blog}: { blog: Blog }) => {
 
     return (<div className="group cursor-pointer">
