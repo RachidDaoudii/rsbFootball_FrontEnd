@@ -1,5 +1,5 @@
-import React from "react";
-import Image from "next/image";
+"useclient"
+import React, { useState, useEffect } from 'react';import Image from "next/image";
 import { Inter } from "next/font/google";
 import img from "@/styles/images/footer/logo.png";
 import imgplayer from "@/styles/images/home/5.jpg";
@@ -16,10 +16,12 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import {increment, decrement,clear} from '@/redux/features/cart/cartSlice';
 import { Product } from "@/types";
+import { setlogin} from "@/redux/features/auth/authSlice"
 
 export default function Home() {
   const dispatch = useDispatch();
   const cart = useSelector((state: any) => state?.cart?.shoppingCart);
+  const auth = useSelector((state: any) => state?.auth);
   const router = useRouter();
   const {route} = router
   const [open, setOpen] = React.useState(false);
@@ -37,6 +39,16 @@ export default function Home() {
   const handleClear = (id: number)=>{
     dispatch(clear(id))
   }
+  
+  useEffect(() => {
+    if (typeof localStorage !== 'undefined') {
+      const getData = JSON.parse(localStorage.getItem("user"));
+      
+      dispatch(setlogin(getData));
+    }
+  }, []);
+
+
   return (
     <>
       <div className={`flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm py-3 md:py-0 nav border-gray-200 dark:border-gray-600 dark:bg-gray-900 ${route === '/'? "":"bg-gray-800"}`}>
@@ -503,10 +515,17 @@ export default function Home() {
                   >
                     contact
                   </a>
-                  <a className="flex items-center gap-x-2 font-semibold text-white hover:text-orange-600 sm:border-s sm:border-gray-300 sm:my-6 sm:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-orange-500" href="#">
+                  {auth?.isAuth == true ? (
+                  <Link className="flex items-center gap-x-2 font-semibold text-white hover:text-orange-600 sm:border-s sm:border-gray-300 sm:my-6 sm:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-orange-500" href={'/dashboard'}>
+                  <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  {auth?.lastName+" "+auth?.firstName}
+                  </Link>
+                    ):<Link className="flex items-center gap-x-2 font-semibold text-white hover:text-orange-600 sm:border-s sm:border-gray-300 sm:my-6 sm:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-orange-500" href={'/auth/signin'}>
                     <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     Log in
-                  </a>
+                  </Link>
+                  }
+                  
                   <button className="text-white" onClick={()=>setOpen(true) }>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm6.305-15l-3.432 12h-10.428l-2.937-7h11.162l-1.412 5h2.078l1.977-7h-16.813l4.615 11h13.239l3.474-12h1.929l.743-2h-4.195z"/></svg>
                   </button>
@@ -705,14 +724,14 @@ export default function Home() {
       </button>
     </div>
     <div className="flex justify-center ">
-    <button className="rounded-lg p-2 mt-5 bg-orange-600 font-medium text-white hover:bg-orange-focus focus:bg-orange-focus active:bg-orange-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
+    <Link href={"/marketplace/checkout"} className="rounded-lg p-2 mt-5 bg-orange-600 font-medium text-white hover:bg-orange-focus focus:bg-orange-focus active:bg-orange-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
       <span>Checkout</span>
       <span className="ms-2">${cart.reduce((total:number, product:any) => {
             return total + (product.price * product.qnt);
           }, 0+ 30.00 + 5.00)
           .toFixed(2) 
           }</span>
-    </button>
+    </Link>
     </div>
     
   </div>
