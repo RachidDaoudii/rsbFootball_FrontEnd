@@ -125,7 +125,7 @@ const Marketplace = () =>{
           {data && data.slice(0, 40).sort(() => Math.random() - 0.5).map((product:Product,i:number)=>(
             <div className="group rounded-xl group-hover:bg-opacity-85 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
             <img
-              className="group-hover:opacity-85 transition duration-500 object-cover object-center h-[130px]"
+              className="group-hover:opacity-85 transition duration-500 object-contain h-[130px]"
               src={product?.image}
               alt="sofa-2"
             />

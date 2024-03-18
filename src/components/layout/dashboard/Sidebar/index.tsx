@@ -3,14 +3,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from 'react';
 import { useRouter } from "next/router";
+import { logout} from "@/redux/features/auth/authSlice"
+import { useSelector, useDispatch } from 'react-redux';
+
 const Sidebar = () => {
   const [isActive, setIsActive] = useState(false);
+  // const dispatch = useDispatch()
   const router = useRouter();
   const handleClick = () => {
     setIsActive(!isActive);
   };
 
-  // console.log(router.pathname)
+
   return (
     <div>
       <div className="sticky top-0 inset-x-0 z-20 bg-gray-800 border-y px-4 sm:px-6 md:px-8 lg:hidden dark:bg-gray-800 dark:border-gray-700">
@@ -103,7 +107,7 @@ const Sidebar = () => {
           <ul className="space-y-1.5">
             <li>
               <Link
-                className={`flex items-center gap-x-3.5 py-2 px-2.5 ${router.pathname =='/dashboard'? 'bg-orange-500':''} text-sm text-white rounded-lg hover:bg-gray-500 dark:bg-gray-900 dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600`}
+                className={`flex items-center gap-x-3.5 py-2 px-2.5 ${router?.pathname =='/dashboard'? 'bg-orange-500':''} text-sm text-white rounded-lg hover:bg-gray-500 dark:bg-gray-900 dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600`}
                 href="/dashboard"
               >
                 <svg
@@ -183,7 +187,7 @@ const Sidebar = () => {
               >
                 <div>
                   <Link
-                    className={`w-full flex items-center text-white   gap-x-3.5 py-2 px-2.5 text-sm ${router.pathname =='/dashboard/blog'? 'bg-orange-500':''} rounded-lg hover:bg-gray-500 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600`}
+                    className={`w-full flex items-center text-white   gap-x-3.5 py-2 px-2.5 text-sm ${router?.pathname =='/dashboard/blog'? 'bg-orange-500':''} rounded-lg hover:bg-gray-500 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600`}
                     href="/dashboard/blog"
                   >
                     <svg
@@ -999,9 +1003,12 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
-              <a
+              <button
+              // onClick={async ()=>{
+              //   await dispatch(logout)
+              //   await router.push("/")
+              // }}
                 className="w-full flex items-center text-white  gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-lg hover:bg-gray-500 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                href="#"
               >
                 <svg
                   className="flex-shrink-0 w-4 h-4"
@@ -1018,8 +1025,8 @@ const Sidebar = () => {
                   <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
                   <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
                 </svg>
-                Documentation
-              </a>
+                Logout
+              </button>
             </li>
           </ul>
         </nav>

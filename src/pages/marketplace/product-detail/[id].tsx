@@ -30,7 +30,7 @@ const ProductDetail = ()=>{
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <img
             alt="ecommerce"
-            className="lg:w-1/2 w-full rounded border border-gray-200"
+            className="lg:w-1/2 w-full rounded border border-gray-200 object-contain"
             src={data?.image}
           />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">

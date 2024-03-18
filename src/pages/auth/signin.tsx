@@ -26,7 +26,7 @@ export default function login() {
               <span>Email:</span>
               <span className="relative mt-1.5 flex">
                 <input
-                  className="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                  className="form-input peer w-full rounded-lg border border-orange-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:z-10 hover:border-orange-600 focus:z-10 focus:border-orange-400 "
                   placeholder="Enter Email"
                   type="text"
                   name="email"
@@ -54,7 +54,7 @@ export default function login() {
               <span>Password:</span>
               <span className="relative mt-1.5 flex">
                 <input
-                  className="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                  className="form-input peer w-full rounded-lg border border-orange-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:z-10 hover:border-orange-600 focus:z-10 focus:border-orange-400 "
                   placeholder="Enter Password"
                   name="password"
                   type="password"
@@ -81,21 +81,21 @@ export default function login() {
             <div className="mt-4 flex items-center justify-between space-x-2">
               <label className="inline-flex items-center space-x-2">
                 <input
-                  className="form-checkbox is-basic h-5 w-5 rounded border-slate-400/70 checked:border-primary checked:bg-primary hover:border-primary focus:border-primary dark:border-navy-400 dark:checked:border-accent dark:checked:bg-accent dark:hover:border-accent dark:focus:border-accent"
+                  className="form-checkbox is-basic h-5 w-5 rounded border-orange-400/70 checked:border-orange-600 checked:bg-orange-600 hover:border-primary focus:border-orange-600 dark:border-navy-400 dark:checked:border-accent dark:checked:bg-accent dark:hover:border-accent dark:focus:border-accent"
                   type="checkbox"
                 />
                 <span className="line-clamp-1">Remember me</span>
               </label>
               <Link
                 href="forget-password"
-                className="text-xs text-slate-400 transition-colors line-clamp-1 hover:text-slate-800 focus:text-slate-800 dark:text-navy-300 dark:hover:text-navy-100 dark:focus:text-navy-100"
+                className="text-xs text-orange-400 transition-colors line-clamp-1 hover:text-orange-200 focus:text-slate-800 dark:text-navy-300 dark:hover:text-navy-100 dark:focus:text-navy-100"
               >
                 Forgot Password?
               </Link>
             </div>
             <button
               onClick={handleSubmit}
-              className="btn mt-5 w-full bg-primary font-medium text-white bg-violet-600 hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90 rounded-lg p-2"
+              className="btn mt-5 w-full bg-orange-600 font-medium text-white bg-violet-600 hover:bg-orange-700 focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90 rounded-lg p-2"
             >
               Sign In
             </button>
@@ -104,7 +104,7 @@ export default function login() {
                 <span>Dont have Account?</span>
                 <Link
                   href="signup"
-                  className="text-primary p-2 transition-colors hover:text-primary-focus dark:text-accent-light dark:hover:text-accent text-violet-600"
+                  className="text-orange-600 p-2 transition-colors hover:text-orange-200 dark:text-accent-light dark:hover:text-accent"
                 >
                   Create account
                 </Link>

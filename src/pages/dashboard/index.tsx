@@ -4,7 +4,7 @@ import Header from "@/components/layout/dashboard/Header";
 import Sidebar from "@/components/layout/dashboard/Sidebar";
 import type { AppProps } from "next/app";
 import { ReactNode, useState } from "react";
-
+import { isAuthenticated } from '@/middleware/auth';
 const Dashboard = ({ children }: { children: ReactNode }) => {
   return (
     <div>
@@ -155,3 +155,15 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
 };
 
 export default Dashboard;
+
+
+export async function getServerSideProps(context) {
+  await isAuthenticated(context.req, context.res, () => {
+    const user = context.req.user;
+  }); 
+  
+  return {
+    props: {
+    }, 
+  };
+}

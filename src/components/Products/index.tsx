@@ -27,7 +27,7 @@ const SectionProducts = ()=>{
         <Image
           width={200}
           height={100}
-          className="h-48 w-full rounded-2xl object-fill object-center"
+          className="h-48 w-full rounded-2xl object-contain"
           src={product?.image} alt="Image Description"
         />
         </a>
