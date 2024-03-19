@@ -48,7 +48,6 @@ export default function Home() {
     }
   }, []);
 
-
   return (
     <>
       <div className={`flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm py-3 md:py-0 nav border-gray-200 dark:border-gray-600 dark:bg-gray-900 ${route === '/'? "":"bg-gray-800"}`}>
@@ -515,15 +514,15 @@ export default function Home() {
                   >
                     contact
                   </a>
-                  {auth?.isAuth == true ? (
-                  <Link className="flex items-center gap-x-2 font-semibold text-white hover:text-orange-600 sm:border-s sm:border-gray-300 sm:my-6 sm:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-orange-500" href={'/dashboard'}>
-                  <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                  {auth?.lastName+" "+auth?.firstName}
-                  </Link>
-                    ):<Link className="flex items-center gap-x-2 font-semibold text-white hover:text-orange-600 sm:border-s sm:border-gray-300 sm:my-6 sm:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-orange-500" href={'/auth/signin'}>
-                    <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    Log in
-                  </Link>
+                  {auth?.email == undefined  ? (
+                    <Link className="flex items-center gap-x-2 font-semibold text-white hover:text-orange-600 sm:border-s sm:border-gray-300 sm:my-6 sm:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-orange-500" href={'/auth/signin'}>
+                      <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                      Log in
+                    </Link>
+                    ):(<Link className="flex items-center gap-x-2 font-semibold text-white hover:text-orange-600 sm:border-s sm:border-gray-300 sm:my-6 sm:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-orange-500" href={'/dashboard'}>
+                        <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        {auth?.firstName+" "+auth?.lastName}
+                      </Link>)
                   }
                   
                   <button className="text-white" onClick={()=>setOpen(true) }>
