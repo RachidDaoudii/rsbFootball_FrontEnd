@@ -16,7 +16,7 @@ const cartSlice = createSlice({
         name: action.payload.name,
         image: action.payload.image,
         price: action.payload.price,
-        qnt: 1,
+        quantity: 1,
         description: action.payload.description,
         Category: action.payload.Category,
       };
@@ -24,7 +24,7 @@ const cartSlice = createSlice({
       let index = state.shoppingCart.findIndex((item) => item.id === data.id);
 
       if (index !== -1) {
-        state.shoppingCart[index].qnt += 1;
+        state.shoppingCart[index].quantity += 1;
       } else {
         state.shoppingCart.push(data);
       }
@@ -33,16 +33,16 @@ const cartSlice = createSlice({
       let index = state.shoppingCart.findIndex(
         (item) => item.id === action.payload,
       );
-      state.shoppingCart[index].qnt += 1;
+      state.shoppingCart[index].quantity += 1;
     },
     decrement: (state, action) => {
       let index = state.shoppingCart.findIndex(
         (item) => item.id === action.payload,
       );
 
-      state.shoppingCart[index].qnt -= 1;
+      state.shoppingCart[index].quantity -= 1;
 
-      if (state.shoppingCart[index].qnt === 0) {
+      if (state.shoppingCart[index].quantity === 0) {
         state.shoppingCart.splice(index, 1);
       }
     },

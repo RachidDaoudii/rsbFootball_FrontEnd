@@ -13,11 +13,33 @@ export const marketplaceApi = ApiSliceMarketplace.injectEndpoints({
         url: `/products/${id}`,
         method: "GET",
       }),
-    })
+    }),
+    orders: builder.query({
+      query: (id) => ({
+        url: `/orders`,
+        method: "GET",
+      }),
+    }),
+    addorder: builder.mutation({
+      query: (body) => ({
+        url: `/orders`,
+        method: "POST",
+        body,
+      }),
+    }),
+    delivered: builder.mutation({
+      query: (id) => ({
+        url: `/orders/delivered/${id}`,
+        method: "POST",
+      }),
+    }),
   }),
 });
 
 export const {
   useProductsQuery,
-  useProductoneQuery
+  useProductoneQuery,
+  useOrdersQuery,
+  useAddorderMutation,
+  useDeliveredMutation
 } = marketplaceApi;

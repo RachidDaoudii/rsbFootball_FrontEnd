@@ -53,7 +53,7 @@ export type Product = {
   image:string;
   description:string;
   price:number;
-  qnt:number;
+  quantity:number;
   Category:{
     name:string;
   }
@@ -107,3 +107,36 @@ export type Staff = {
 export type CartShopping<Product> = {
   shoppingCart:Product[]
 }
+
+export type Order = {
+  id: number;
+  customerFirstName: string;
+  customerLastName: string;
+  customerEmail: string;
+  customerPhone: string;
+  customerAddressLin: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  totalAmount: string;
+  isDelivered: boolean;
+  isPaid: boolean;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string;
+  orderProducts: {
+      id: number;
+      quantity: number;
+      product: {
+          id: number;
+          name: string;
+          image: string;
+          price: number;
+          stock: number;
+          description: string;
+          createdAt: string;
+          updatedAt: string;
+          deletedAt: string;
+      };
+  }[];
+};

@@ -1,31 +1,75 @@
 import Header from "@/components/Header/2";
 import Footer from "@/components/footer";
 import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { Product } from "@/types";
+import { useAddorderMutation } from "@/redux/service/marketplace/marketplaceApi";
+import { toast } from "react-toastify";
 const CheckOut =()=>{
+    const [order,{ data, error, isLoading,isSuccess,isError }] = useAddorderMutation()
     const cart = useSelector((state: any) => state?.cart?.shoppingCart);
+
+    const [checkOut , setCheckOut] = useState({
+        productId:cart,
+        quantity:0,
+        customerFirstName: "",
+        customerLastName: "",
+        customerEmail: "",
+        customerPhone: 0,
+        customerAddressLin: "",
+        city: "",
+        state: "",
+        postalCode: 0,
+        totalAmount: cart.reduce((total:number, product:any) => {
+            return total + (product.price * product.quantity);
+          }, 0+ 30.00 + 5.00)
+          .toFixed(2)
+    })
+
+    const handleCheckOut = async () => {
+        await order(checkOut)
+    }
+
+    const handleInputChange = (e:any)=>{
+        setCheckOut({...checkOut,[e.target.name]:e.target.value})
+    }
+
+    useEffect(()=>{
+        if(isSuccess){
+            toast.success("Order send successfully");
+        }
+        if(isError){
+            toast.error(error.data.message);
+        }
+
+    },[isError,isSuccess])
+
+
+
+
     return (
         <>
         <Header/>
-        <div class="font-[sans-serif] bg-gray-50 p-8">
-            <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 h-full">
-                <div class="bg-[#3f3f3f] lg:h-screen lg:sticky lg:top-0 rounded-xl">
-                <div class="relative h-full">
-                    <div class="p-8 lg:overflow-auto lg:h-[calc(100vh-30px)]">
-                    <h2 class="text-2xl font-bold text-white">Order Summary</h2>
-                    <div class="space-y-6 mt-10 ">
+        <div className="font-[sans-serif] bg-gray-50 p-8">
+            <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 h-full">
+                <div className="bg-[#3f3f3f] lg:h-screen lg:sticky lg:top-0 rounded-xl">
+                <div className="relative h-full">
+                    <div className="p-8 lg:overflow-auto lg:h-[calc(100vh-30px)]">
+                    <h2 className="text-2xl font-bold text-white">Order Summary</h2>
+                    <div className="space-y-6 mt-10 ">
                     {
                         cart.length >= 1 ? (cart.length >= 1 && cart.map((item:Product,i:number)=>{
                             return ( 
-                            <div class="grid sm:grid-cols-2 items-start gap-6">
-                                <div class="px-4 py-6 shrink-0 bg-gray-50 rounded-md">
-                                    <img src={item?.image} class="w-full object-contain" />
+                            <div className="grid sm:grid-cols-2 items-start gap-6">
+                                <div className="px-4 py-6 shrink-0 bg-gray-50 rounded-md">
+                                    <img src={item?.image} className="w-full object-contain" />
                                 </div>
                                 <div>
-                                    <h3 class="text-base text-white">{item?.name}</h3>
-                                    <ul class="text-xs text-white space-y-3 mt-4">
-                                    {/* <li class="flex flex-wrap gap-4">Size <span class="ml-auto">37</span></li> */}
-                                    <li class="flex flex-wrap gap-4">Quantity <span class="ml-auto">{item?.qnt}</span></li>
-                                    <li class="flex flex-wrap gap-4">Total Price <span class="ml-auto">${item?.price}</span></li>
+                                    <h3 className="text-base text-white">{item?.name}</h3>
+                                    <ul className="text-xs text-white space-y-3 mt-4">
+                                    {/* <li className="flex flex-wrap gap-4">Size <span className="ml-auto">37</span></li> */}
+                                    <li className="flex flex-wrap gap-4">Quantity <span className="ml-auto">{item?.quantity}</span></li>
+                                    <li className="flex flex-wrap gap-4">Total Price <span className="ml-auto">${item?.price}</span></li>
                                     </ul>
                                 </div>
                             </div>)
@@ -35,25 +79,27 @@ const CheckOut =()=>{
                         
                     </div>
                     </div>
-                    <div class="absolute left-0 bottom-0 bg-[#444] w-full p-4 rounded-xl">
-                    <h4 class="flex flex-wrap gap-4 text-base text-white">Total <span class="ml-auto">${cart.reduce((total:number, product:any) => {
-            return total + (product.price * product.qnt);
+                    <div className="absolute left-0 bottom-0 bg-[#444] w-full p-4 rounded-xl">
+                    <h4 className="flex flex-wrap gap-4 text-base text-white">Total <span className="ml-auto">${cart.reduce((total:number, product:any) => {
+            return total + (product.price * product.quantity);
           }, 0+ 30.00 + 5.00)
           .toFixed(2) 
           }</span></h4>
                     </div>
                 </div>
                 </div>
-                <div class="xl:col-span-2 h-max rounded-md p-8 sticky top-0">
-                <h2 class="text-2xl font-bold text-[#333]">Complete your order</h2>
-                <form class="mt-10">
+                <div className="xl:col-span-2 h-max rounded-md p-8 sticky top-0">
+                <h2 className="text-2xl font-bold text-[#333]">Complete your order</h2>
+                <form className="mt-10">
                     <div>
-                    <h3 class="text-lg font-bold text-[#333] mb-6">Personal Details</h3>
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div class="relative flex items-center">
+                    <h3 className="text-lg font-bold text-[#333] mb-6">Personal Details</h3>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                        <div className="relative flex items-center">
                         <input type="text" placeholder="First Name"
-                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4"
+                            name="customerFirstName"
+                            onChange={handleInputChange}
+                            className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" className="w-[18px] h-[18px] absolute right-4"
                             viewBox="0 0 24 24">
                             <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
                             <path
@@ -61,10 +107,12 @@ const CheckOut =()=>{
                             data-original="#000000"></path>
                         </svg>
                         </div>
-                        <div class="relative flex items-center">
+                        <div className="relative flex items-center">
                         <input type="text" placeholder="Last Name"
-                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4"
+                            name="customerLastName"
+                            onChange={handleInputChange}
+                            className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" className="w-[18px] h-[18px] absolute right-4"
                             viewBox="0 0 24 24">
                             <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
                             <path
@@ -72,10 +120,12 @@ const CheckOut =()=>{
                             data-original="#000000"></path>
                         </svg>
                         </div>
-                        <div class="relative flex items-center">
+                        <div className="relative flex items-center">
                         <input type="email" placeholder="Email"
-                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4"
+                            name="customerEmail"
+                            onChange={handleInputChange}
+                            className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" className="w-[18px] h-[18px] absolute right-4"
                             viewBox="0 0 682.667 682.667">
                             <defs>
                             <clipPath id="a" clipPathUnits="userSpaceOnUse">
@@ -92,10 +142,12 @@ const CheckOut =()=>{
                             </g>
                         </svg>
                         </div>
-                        <div class="relative flex items-center">
+                        <div className="relative flex items-center">
                         <input type="number" placeholder="Phone No."
-                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
-                        <svg fill="#bbb" class="w-[18px] h-[18px] absolute right-4" viewBox="0 0 64 64">
+                            name="customerPhone"
+                            onChange={handleInputChange}
+                            className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        <svg fill="#bbb" className="w-[18px] h-[18px] absolute right-4" viewBox="0 0 64 64">
                             <path
                             d="m52.148 42.678-6.479-4.527a5 5 0 0 0-6.963 1.238l-1.504 2.156c-2.52-1.69-5.333-4.05-8.014-6.732-2.68-2.68-5.04-5.493-6.73-8.013l2.154-1.504a4.96 4.96 0 0 0 2.064-3.225 4.98 4.98 0 0 0-.826-3.739l-4.525-6.478C20.378 10.5 18.85 9.69 17.24 9.69a4.69 4.69 0 0 0-1.628.291 8.97 8.97 0 0 0-1.685.828l-.895.63a6.782 6.782 0 0 0-.63.563c-1.092 1.09-1.866 2.472-2.303 4.104-1.865 6.99 2.754 17.561 11.495 26.301 7.34 7.34 16.157 11.9 23.011 11.9 1.175 0 2.281-.136 3.29-.406 1.633-.436 3.014-1.21 4.105-2.302.199-.199.388-.407.591-.67l.63-.899a9.007 9.007 0 0 0 .798-1.64c.763-2.06-.007-4.41-1.871-5.713z"
                             data-original="#000000"></path>
@@ -103,21 +155,29 @@ const CheckOut =()=>{
                         </div>
                     </div>
                     </div>
-                    <div class="mt-6">
-                    <h3 class="text-lg font-bold text-[#333] mb-6">Shipping Address</h3>
-                    <div class="grid sm:grid-cols-2 gap-6">
+                    <div className="mt-6">
+                    <h3 className="text-lg font-bold text-[#333] mb-6">Shipping Address</h3>
+                    <div className="grid sm:grid-cols-2 gap-6">
                         <input type="text" placeholder="Address Line"
-                        class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        name="customerAddressLin"
+                        onChange={handleInputChange}
+                        className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
                         <input type="text" placeholder="City"
-                        class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        name="city"
+                        onChange={handleInputChange}
+                        className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
                         <input type="text" placeholder="State"
-                        class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        name="state"
+                        onChange={handleInputChange}
+                        className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
                         <input type="text" placeholder="Zip Code"
-                        class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        name="postalCode"
+                        onChange={handleInputChange}
+                        className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
                     </div>
-                    <div class="flex gap-6 max-sm:flex-col mt-10">
-                        <button type="button" class="rounded-md px-6 py-3 w-full text-sm font-semibold bg-transparent hover:bg-gray-100 border-2 text-[#333]">Cancel</button>
-                        <button type="button" class="rounded-md px-6 py-3 w-full text-sm font-semibold bg-[#333] text-white hover:bg-[#222]">Complete Purchase</button>
+                    <div className="flex gap-6 max-sm:flex-col mt-10">
+                        <button type="button" className="rounded-md px-6 py-3 w-full text-sm font-semibold bg-transparent hover:bg-gray-100 border-2 text-[#333]">Cancel</button>
+                        <button type="button" onClick={handleCheckOut} className="rounded-md px-6 py-3 w-full text-sm font-semibold bg-[#333] text-white hover:bg-[#222]">Complete Purchase</button>
                     </div>
                     </div>
                 </form>

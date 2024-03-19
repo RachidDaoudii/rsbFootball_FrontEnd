@@ -572,7 +572,7 @@ export default function Home() {
                     alt="image"
                   />
                   <div className="absolute top-0 right-0 -m-1 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full border border-gray-300 bg-gray-300 px-1 text-tiny+ font-medium leading-none text-slate-800 dark:border-navy-700 dark:bg-navy-450 dark:text-white">
-                    {item?.qnt}
+                    {item?.quantity}
                   </div>
                 </div>
                 <div>
@@ -657,7 +657,7 @@ export default function Home() {
       <div className="flex justify-between text-base font-medium text-primary dark:text-accent-light">
         <p>Total</p>
         <p>{cart.reduce((total:number, product:any) => {
-            return total + (product.price * product.qnt);
+            return total + (product.price * product.quantity);
           }, 0+ 30.00 + 5.00)
           .toFixed(2) 
           }</p>
@@ -726,7 +726,7 @@ export default function Home() {
     <Link href={"/marketplace/checkout"} className="rounded-lg p-2 mt-5 bg-orange-600 font-medium text-white hover:bg-orange-focus focus:bg-orange-focus active:bg-orange-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
       <span>Checkout</span>
       <span className="ms-2">${cart.reduce((total:number, product:any) => {
-            return total + (product.price * product.qnt);
+            return total + (product.price * product.quantity);
           }, 0+ 30.00 + 5.00)
           .toFixed(2) 
           }</span>

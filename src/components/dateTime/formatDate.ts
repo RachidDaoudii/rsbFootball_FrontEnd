@@ -1,5 +1,9 @@
 export const formatDate = (dateString:any) => {
-    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
-    const formattedDate = new Date(dateString).toLocaleDateString('en-US', options);
-    return formattedDate;
+    const optionsDate: Intl.DateTimeFormatOptions = { month: 'short', day: '2-digit', year: 'numeric' };
+    const optionsTime: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', timeZoneName: 'short' };
+
+    const formattedDate = new Date(dateString).toLocaleDateString('en-US', optionsDate);
+    const formattedTime = new Date(dateString).toLocaleTimeString('en-US', optionsTime);
+
+    return `${formattedDate}, ${formattedTime}`;
 };
