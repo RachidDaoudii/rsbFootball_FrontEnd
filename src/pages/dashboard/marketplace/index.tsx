@@ -25,9 +25,9 @@ const Marketplace = ()=>{
     const handleOpen = () => setOpen(!open);
 
 
-    if(isLoading){
-        return (<Spinner/>)
-    }
+    // if(isLoading){
+    //     return (<Spinner/>)
+    // }
 
 
     return (
@@ -123,7 +123,7 @@ const Marketplace = ()=>{
                         <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
                             {/* start */}
                             {
-                                data.map((order:Order)=> {
+                                data && data.map((order:Order)=> {
                                     return(<tr><td className="size-px whitespace-nowrap">
                                     </td>
                                     <td className="size-px whitespace-nowrap">
@@ -229,7 +229,7 @@ const Marketplace = ()=>{
                         <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-gray-700">
                         <div>
                             <p className="text-sm text-gray-600 dark:text-gray-400">
-                            <span className="font-semibold text-gray-800 dark:text-gray-200">{data.length}</span> results
+                            <span className="font-semibold text-gray-800 dark:text-gray-200">{data && data.length}</span> results
                             </p>
                         </div>
             
