@@ -45,7 +45,6 @@ const Products = ()=>{
   }
   const handleCategoryChange = (value:any) => {
     setProduct({ ...product, Category: value });
-   
   };
 
   const handleFileChange = async (event:any) => {

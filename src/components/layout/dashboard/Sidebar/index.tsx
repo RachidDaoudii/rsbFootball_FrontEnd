@@ -414,9 +414,9 @@ const Sidebar = () => {
                   data-hs-accordion-always-open
                 >
                   <div>
-                    <a
+                    <Link
                       className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-lg hover:bg-gray-500 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                      href="#"
+                      href={'/dashboard/club/overview'}
                     >
                       <svg
                         className="flex-shrink-0 w-4 h-4"
@@ -434,14 +434,14 @@ const Sidebar = () => {
                         <polyline points="9 22 9 12 15 12 15 22" />
                       </svg>
                       OverView
-                    </a>
+                    </Link>
                   </div>
                   <li className="hs-accordion" id="users-accordion-sub-1">
                     <button
                       type="button"
                       className="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-orange-500 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                     >
-                      Sub Menu 1
+                      Categories
                       <svg
                         className="hs-accordion-active:block ms-auto hidden w-4 h-4"
                         xmlns="http://www.w3.org/2000/svg"
@@ -478,28 +478,64 @@ const Sidebar = () => {
                     >
                       <ul className="pt-2 ps-2">
                         <li>
-                          <a
+                          <Link
                             className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="#"
+                            href={'/dashboard/club/categories/list'}
                           >
-                            Link 1
-                          </a>
+                            Lists
+                          </Link>
                         </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="hs-accordion" id="users-accordion-sub-1">
+                    <button
+                      type="button"
+                      className="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-orange-500 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                    >
+                      Staffs
+                      <svg
+                        className="hs-accordion-active:block ms-auto hidden w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m18 15-6-6-6 6" />
+                      </svg>
+                      <svg
+                        className="hs-accordion-active:hidden ms-auto block w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </button>
+
+                    <div
+                      id="users-accordion-sub-1-child"
+                      className="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
+                    >
+                      <ul className="pt-2 ps-2">
                         <li>
-                          <a
+                          <Link
                             className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="#"
+                            href={'/dashboard/club/staff/liststaff'}
                           >
-                            Link 2
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="#"
-                          >
-                            Link 3
-                          </a>
+                            Lists
+                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -696,22 +732,6 @@ const Sidebar = () => {
                           >
                             List
                           </Link>
-                        </li>
-                        <li>
-                          <a
-                            className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="#"
-                          >
-                            Link 2
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="#"
-                          >
-                            Link 3
-                          </a>
                         </li>
                       </ul>
                     </div>
