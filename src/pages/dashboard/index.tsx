@@ -4,30 +4,30 @@ import Sidebar from "@/components/layout/dashboard/Sidebar";
 import type { AppProps } from "next/app";
 import { ReactNode, useState,useEffect } from "react";
 import { isAuthenticated } from '@/middleware/auth';
-import { parse } from 'cookie';
-import jwt from 'jsonwebtoken';
 import { useRouter } from 'next/router'
-const Dashboard = ({ children }: { children: ReactNode }) => {
+import Page404 from "../404"
+const Dashboard =  ({ children }: { children: ReactNode }) => {
   const router = useRouter()
-  useEffect(() => {
-    const cookies = document.cookie.split(';').map(cookie => cookie.trim());
-    let accessToken = null;
-  
-    cookies.forEach(cookie => {
-      if (cookie.startsWith('accessToken=')) {
-        const parts = cookie.split('=');
-        accessToken = parts[1];
-      }
-    });
 
-    const decodedToken = jwt.decode(accessToken, process.env.JWT_SECRET);
-    const { id, firstName, lastName, email, roles } = decodedToken;
-    if (Array.isArray(roles) && roles.includes('admin')) {
-      return true
-    } else {
-      router.push('/')
-    }
+  const [isAuthenticatedState, setIsAuthenticatedState] = useState(true);
+
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      try {
+        const authenticated = await isAuthenticated();
+        setIsAuthenticatedState(authenticated);
+      } catch (error) {
+        setIsAuthenticatedState(false);
+      }
+    };
+
+    checkAuthentication();
   }, []);
+
+  if (!isAuthenticatedState) {
+    return <Page404/>;
+  }
+  
   
   return (
     <div>
@@ -179,16 +179,3 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
 
 export default Dashboard;
 
-
-// export async function getServerSideProps(context) {
-
-//   await isAuthenticated(context.req, context.res, () => {
-//     const user = context.req.user;
-//     console.log(user)
-//   }); 
-  
-//   return {
-//     props: {
-//     }, 
-//   };
-// }
