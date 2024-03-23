@@ -1,11 +1,34 @@
 "use Client";
-
 import Header from "@/components/layout/dashboard/Header";
 import Sidebar from "@/components/layout/dashboard/Sidebar";
 import type { AppProps } from "next/app";
-import { ReactNode, useState } from "react";
+import { ReactNode, useState,useEffect } from "react";
 import { isAuthenticated } from '@/middleware/auth';
-const Dashboard = ({ children }: { children: ReactNode }) => {
+import { useRouter } from 'next/router'
+import Page404 from "../404"
+const Dashboard =  ({ children }: { children: ReactNode }) => {
+  const router = useRouter()
+
+  const [isAuthenticatedState, setIsAuthenticatedState] = useState(true);
+
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      try {
+        const authenticated = await isAuthenticated();
+        setIsAuthenticatedState(authenticated);
+      } catch (error) {
+        setIsAuthenticatedState(false);
+      }
+    };
+
+    checkAuthentication();
+  }, []);
+
+  if (!isAuthenticatedState) {
+    return <Page404/>;
+  }
+  
+  
   return (
     <div>
       <div className=" dark:bg-white">
@@ -156,14 +179,3 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
 
 export default Dashboard;
 
-
-export async function getServerSideProps(context) {
-  await isAuthenticated(context.req, context.res, () => {
-    const user = context.req.user;
-  }); 
-  
-  return {
-    props: {
-    }, 
-  };
-}
