@@ -11,15 +11,31 @@ import { useComment } from "@/pages/api/blog/serviceBlog";
 import Spinner from "@/components/spinner";
 import { Blog } from "@/types";
 import { comment } from "@/types";
-
-
+import { useDeletecommentMutation,
+  useUpdatecommentMutation } from "@/redux/service/blog/blogApi";
 const SingleBlogPage =  () => {
+  
    const router = useRouter();
    const { id } =  router.query;
    const { data, error, isLoading, refetch ,isSuccess } = useGetOnePostQuery(id);
    const {comment,handleChangeComment , handleSubmitComment ,errorComment,isErrorComment ,isSuccessComment}= useComment()
- 
+   const [CommentDelete,{ data :dataCommentDelete , error:errorCommentDelete, isError:isErrorCommentDelete,isLoading:isLoadingCommentDelete ,isSuccess:isSuccessCommentDelete }] = useDeletecommentMutation();
+    const [CommentUpdate,{ data :dataCommentUpdate , error:errorCommentUpdate, isError:isErrorCommentUpdate,isLoading:isLoadingCommentUpdate ,isSuccess:isSuccessCommentUpdate }] = useUpdatecommentMutation();
+
    const [blog,setBlog] = useState<Blog>()
+
+
+  
+   const handleDeleteCommnet = async (id:number) =>{
+    await CommentDelete(id)
+    await refetch()
+
+   }
+
+   const handleUpdateCommnet = async (comment:object) =>{
+    await CommentUpdate(comment)
+    await refetch()
+   }
 
    useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +43,7 @@ const SingleBlogPage =  () => {
       try {
         const refetchResult = await refetch();
         if (isErrorComment) {
-          toast.error("Please login");
+          return toast.error("Please login");
         }
   
         if (isSuccess) {
@@ -35,7 +51,7 @@ const SingleBlogPage =  () => {
           await setBlog(data);
         }
   
-        if ( isSuccessComment ) {
+        if ( isSuccessComment || isSuccessCommentDelete || isSuccessCommentUpdate) {
           await setBlog(data);
         }
 
@@ -43,19 +59,27 @@ const SingleBlogPage =  () => {
           const postData = refetchResult ? refetchResult.data : data;
           await setBlog(postData);
         }
+
+        if(isErrorCommentDelete){
+          return toast.error(errorCommentDelete?.data);
+        }
+
       } catch (error) {
         console.error("An error occurred:", error);
       }
     };
   
     fetchData(); 
+
+
   
-  }, [id,isLoading,isSuccess, isErrorComment, errorComment, isSuccessComment]);
+  }, [id,isLoading,isSuccess, isErrorComment, errorComment, isSuccessComment ,refetch,isSuccessCommentDelete,isSuccessCommentUpdate,isErrorCommentDelete]);
   
   if(isLoading){
     return(<Spinner/>)
   }
   
+
 
   return (
     <>
@@ -246,7 +270,11 @@ const SingleBlogPage =  () => {
 <div className="mx-auto max-w-screen-md">
 <ol className="comment-list mt-5">
          { blog?.comments && blog.comments.length > 0 ?(
-            blog.comments.map((comment :comment,i:number)=>(<Comment key={i} comment={comment}/>))
+            blog.comments.map((comment :comment,i:number)=>(<Comment key={i} comment={comment} 
+              onUpdate={handleUpdateCommnet}
+              onDelete={handleDeleteCommnet}
+              // user={blog?.users}
+              />))
          ):(null)}
   </ol>
 </div>

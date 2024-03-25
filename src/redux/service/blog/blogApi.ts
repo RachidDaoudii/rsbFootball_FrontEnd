@@ -50,6 +50,45 @@ export const blogApi = ApiSliceBlog.injectEndpoints({
         method: "GET",
       }),
     }),
+    addcategory: builder.mutation({
+      query: (body) => ({
+        url: "category",
+        method: "POST",
+        body
+      }),
+    }),
+    deletecategory: builder.mutation({
+      query: (id) => ({
+        url: `category/${id}`,
+        method: "DELETE",
+      }),
+    }),
+    updatecategory: builder.mutation({
+      query: (body) => {
+        const {id} = body;
+        return {
+          url: `/category/${id}`,
+          method: "PATCH",
+          body
+        };
+      },
+    }),
+    deletecomment: builder.mutation({
+      query: (id) => ({
+        url: `comment/${id}`,
+        method: "DELETE",
+      }),
+    }),
+    updatecomment: builder.mutation({
+      query: (body) => {
+        const {id} = body;
+        return {
+          url: `/comment/${id}`,
+          method: "PATCH",
+          body
+        };
+      },
+    }),
   }),
 });
 
@@ -60,5 +99,8 @@ export const {
   useAddblogMutation,
   useUpdateblogMutation,
   useDeleteblogMutation,
-  useCategoriesQuery
+  useCategoriesQuery,
+  useAddcategoryMutation,useDeletecategoryMutation,useUpdatecategoryMutation,
+  useDeletecommentMutation,
+  useUpdatecommentMutation
 } = blogApi;
