@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import Cookies from 'js-cookie';
+import  Cookies from 'js-cookie';
 
 export async function isAuthenticated() {
   const accessToken = Cookies.get('accessToken');

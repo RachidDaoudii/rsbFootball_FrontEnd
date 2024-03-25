@@ -255,100 +255,17 @@ const Sidebar = () => {
                     >
                       <ul className="pt-2 ps-2">
                         <li>
-                          <a
-                            className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="#"
-                          >
-                            Link 1
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="#"
-                          >
-                            Link 2
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-swhite rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="#"
-                          >
-                            Link 3
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li className="hs-accordion" id="blogger">
-                    <button
-                      type="button"
-                      className="hs-accordion-toggle w-full text-white flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-orange-500 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    >
-                      blogs
-                      <svg
-                        className="hs-accordion-active:block ms-auto hidden w-4 h-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="m18 15-6-6-6 6" />
-                      </svg>
-                      <svg
-                        className="hs-accordion-active:hidden ms-auto block w-4 h-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="m6 9 6 6 6-6" />
-                      </svg>
-                    </button>
-
-                    <div
-                      id="blogger-child"
-                      className="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
-                    >
-                      <ul className="pt-2 ps-2">
-                        <li>
                           <Link
                             className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="/dashboard/blog/addBlog"
+                            href={"/dashboard/blog/categories"}
                           >
-                            Add
+                            Lists
                           </Link>
-                        </li>
-                        <li>
-                          <a
-                            className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="#"
-                          >
-                            Link 2
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-gray-500 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="#"
-                          >
-                            Link 3
-                          </a>
                         </li>
                       </ul>
                     </div>
                   </li>
+                  
                 </ul>
               </div>
             </li>

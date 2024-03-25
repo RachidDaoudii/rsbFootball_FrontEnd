@@ -64,7 +64,12 @@ const handleFileChange = async (event:any) => {
     // if(post.image === ""){
     //   return toast.error("image is empty!!")
     // }
-    await AddPost(post)
+    await AddPost({
+      title:post.title,
+      image:post.image,
+      content:post.content,
+      categoriesId:post.categoriesId
+    })
     await refetch()
     await handleOpen()
   }
